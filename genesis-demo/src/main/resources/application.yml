@@ -1,0 +1,18 @@
+server:
+    port: 8080
+    context-path: #/sungang/
+#    tomcat:
+#      basedir: logs
+#      accesslog:
+#        enabled: true
+#        directory: .
+
+spring:
+  application:
+    name: genesis-demo    # 项目名称尽量用小写
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/    # 指定注册中心的地址
+  instance:
+      preferIpAddress: true
