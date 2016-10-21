@@ -1,4 +1,4 @@
-package com.flame;
+package com.flame.server.discovery;
 
 /**
  * Hello world!
