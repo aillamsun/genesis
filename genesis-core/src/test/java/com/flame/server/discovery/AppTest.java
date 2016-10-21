@@ -1,4 +1,4 @@
-package com.flame;
+package com.flame.server.discovery;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
