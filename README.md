@@ -50,6 +50,6 @@ genesis 是一个基于Spring cloud(Camden.RELEASE) Spring Boot(1.4.1.RELEASE) M
 > * 通过API文档Try 就可以了
 ## API 文档访问
 > * 启动API genesis-demo 访问http://localhost:8080/swagger-ui.html
-![api-demo](http://v1.freep.cn/3tb_161024171010fguc512293.png)
+![api-demo](http://p1.bqimg.com/1949/6721d590be673013.png)
 ## 分布式事务测试(暂时没开发，后续更新...)
 
