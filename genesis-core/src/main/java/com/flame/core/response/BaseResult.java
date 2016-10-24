@@ -1,11 +1,11 @@
-package com.flame.core.resource;
+package com.flame.core.response;
 
 /**
  * Created by sungang on 2016/10/21.
  */
 public class BaseResult {
 
-    private String code;//状态码
+    private String code = "success";//状态码
 
     private String message;//附加消息
 
