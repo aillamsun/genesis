@@ -1,10 +1,9 @@
 package com.flame.demo.goods.controller;
 
-import com.alibaba.fastjson.JSON;
-import com.flame.core.resource.BaseResult;
+import com.flame.core.response.BaseResult;
 import com.flame.core.web.controller.BaseController;
-import com.flame.demo.goods.model.Goods;
 import com.flame.demo.goods.service.GoodsService;
+import com.flame.model.Goods;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,6 +23,7 @@ public class GoodsController extends BaseController {
 
     /**
      * 商品添加
+     *
      * @param goods
      * @return
      */
@@ -47,15 +47,15 @@ public class GoodsController extends BaseController {
 
 
     @GetMapping
-    public String getGoods() {
+    public List<Goods> getGoods() {
         List<Goods> goodsList = goodsService.selectAll();
-        return JSON.toJSONString(goodsList);
+        return goodsList;
     }
 
     @GetMapping("/{goods_id}")
-    public String getGoods(@PathVariable("goods_id") Long goods_id) {
+    public Goods getGoodsById(@PathVariable("goods_id") Long goods_id) {
         Goods goods = goodsService.selectByKey(goods_id);
-        return JSON.toJSONString(goods);
+        return goods;
     }
 
     @DeleteMapping("/{goods_id}")
@@ -76,10 +76,11 @@ public class GoodsController extends BaseController {
         return result;
     }
 
-    @PutMapping
-    public BaseResult updateGoods(@RequestBody Goods goods) {
+    @PutMapping("/{goods_id}")
+    public BaseResult updateGoods(@PathVariable("goods_id") Long goods_id, @RequestBody Goods goods) {
         BaseResult result = new BaseResult();
         try {
+            goods.setId(goods_id);
             int i = goodsService.updateByPrimaryKeySelective(goods);
             if (i == 1) {
                 result.setMessage("修改成功");
