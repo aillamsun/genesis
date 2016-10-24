@@ -8,6 +8,7 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
  * Created by sungang on 2016/10/21.
  */
 @SpringBootApplication
+//
 @EnableEurekaServer
 public class GenesisServerApp {
 

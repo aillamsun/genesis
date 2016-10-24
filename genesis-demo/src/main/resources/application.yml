@@ -14,5 +14,8 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://discovery:8761/eureka/    # 指定注册中心的地址
+    healthcheck:
+      enabled: true
   instance:
       preferIpAddress: true
+

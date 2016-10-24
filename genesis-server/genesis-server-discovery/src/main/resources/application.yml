@@ -2,15 +2,22 @@ server:
   port: 8761                    # 指定该Eureka实例的端口
 eureka:
   instance:
+    statusPageUrl: https://${eureka.hostname}/info
+    healthCheckUrl: https://${eureka.hostname}/health
+    homePageUrl: https://${eureka.hostname}/
     hostname: discovery         # 指定该Eureka实例的主机名
   enableSelfPreservation: false
 #  server:
 #    enable-self-preservation: false
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: false  #是否将eureka自身作为应用注册到eureka注册中心
+    fetchRegistry: false #为true时，可以启动，但报异常：Cannot execute request on any known server
+    healthcheck:
+      enabled: true
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    enableSelfPreservation: false
 
 # 参考文档：http://projects.spring.io/spring-cloud/docs/1.0.3/spring-cloud.html#_standalone_mode
 # 参考文档：http://my.oschina.net/buwei/blog/618756
