@@ -18,20 +18,9 @@
     <dependencies>
 
 
-       <!-- <dependency>
+        <dependency>
             <groupId>com.flame</groupId>
             <artifactId>genesis-model</artifactId>
-            <version>${project.version}</version>
-        </dependency>-->
-
-        <dependency>
-            <groupId>com.flame</groupId>
-            <artifactId>genesis-common</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.flame</groupId>
-            <artifactId>genesis-core</artifactId>
             <version>${project.version}</version>
         </dependency>
 
@@ -52,24 +41,13 @@
         </dependency>
 
         <!-- 断路器 -->
-        <dependency>
+       <!-- <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-hystrix</artifactId>
-        </dependency>
+        </dependency>-->
 
 
 
-        <!-- Swagger UI-->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>${springfox.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>${springfox.version}</version>
-        </dependency>
 
 
     </dependencies>

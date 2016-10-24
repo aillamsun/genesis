@@ -1,16 +1,17 @@
 package com.flame.demo.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.flame.core.resource.BaseResult;
+import com.flame.core.response.BaseResult;
 import com.flame.core.web.controller.BaseController;
-import com.flame.demo.model.Goods;
 import com.flame.demo.service.IGoodsService;
+import com.flame.model.Goods;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -33,6 +34,7 @@ public class GoodsController extends BaseController {
     @ApiOperation("添加商品")
     @PostMapping
     public BaseResult add(@RequestBody Goods goods) {
+        goods.setCreateTime(new Date());
         BaseResult result = goodsService.add(goods);
         return result;
     }
@@ -60,9 +62,11 @@ public class GoodsController extends BaseController {
     }
 
     @ApiOperation("更新商品")
-    @PutMapping
-    public BaseResult updateGoods(@ApiParam("商品") @RequestBody Goods goods) {
-        BaseResult result = goodsService.updateById(goods);
+    @PutMapping("/{goods_id}")
+    public BaseResult updateGoods(
+            @ApiParam("商品ID") @PathVariable("goods_id") Long goods_id,
+            @ApiParam("商品") @RequestBody Goods goods) {
+        BaseResult result = goodsService.updateById(goods_id,goods);
         return result;
     }
 }

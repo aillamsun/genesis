@@ -1,7 +1,7 @@
 package com.flame.demo.service;
 
-import com.flame.core.resource.BaseResult;
-import com.flame.demo.model.Goods;
+import com.flame.core.response.BaseResult;
+import com.flame.model.Goods;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -57,10 +57,9 @@ public interface IGoodsService {
     /**
      * 更新商品
      *
-     * @param goods_id
      * @param goods
      * @return
      */
-    @RequestMapping(value = "/goods", method = RequestMethod.PUT)
-    BaseResult updateById(@RequestBody Goods goods);
+    @RequestMapping(value = "/goods/{goods_id}", method = RequestMethod.PUT)
+    BaseResult updateById(@PathVariable("goods_id") Long goods_id, @RequestBody Goods goods);
 }

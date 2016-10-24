@@ -32,7 +32,8 @@ public class Swagger2Config {
     private ApiInfo buildApiInf() {
         return new ApiInfoBuilder()
                 .title("Spring Cloud Test API文档")
-                .contact(new Contact("Ailliam's","","sungang_1120@sina.com"))
+                .contact(new Contact("Ailliam'S","","sungang_1120@sina.com"))
+                .termsOfServiceUrl("")
                 .version("1.0")
                 .build();
     }

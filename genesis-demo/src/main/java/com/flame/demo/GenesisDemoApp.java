@@ -12,6 +12,8 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 @EnableDiscoveryClient
 //开启Feign调用接口
 @EnableFeignClients
+//如果你不需要数据源,将它从auto-config排除
+//@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 public class GenesisDemoApp {
 
     public static void main(String[] args) {
