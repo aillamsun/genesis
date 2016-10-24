@@ -8,7 +8,14 @@
     <modules>
         <module>genesis-core</module>
         <module>genesis-common</module>
+        <module>genesis-model</module>
         <module>genesis-spring</module>
+        <module>genesis-server</module>
+        <module>genesis-demo</module>
+        <module>genesis-demo-goods-service</module>
+        <module>genesis-demo-order-service</module>
+        <!--<module>genesis-demo-goods-service</module>-->
+
     </modules>
     <packaging>pom</packaging>
 
@@ -22,21 +29,52 @@
         <junit.version>4.11</junit.version>
 
 
-        <spring.version>4.1.2.RELEASE</spring.version>
+        <!-- Jar Tools -->
+        <guava.version>19.0</guava.version>
+        <joda.version>2.9.4</joda.version>
+        <fastjson.version>1.2.17</fastjson.version>
+        <springfox.version>2.5.0</springfox.version>
 
+        <log4j.version>1.2.17</log4j.version>
+        <slf4j.version>1.7.7</slf4j.version>
+        <logback.version>1.1.7</logback.version>
+
+        <spring.version>4.1.2.RELEASE</spring.version>
+        <spring.boot.version>1.4.1.RELEASE</spring.boot.version>
+        <spring.cloud.version>Camden.RELEASE</spring.cloud.version>
+
+        <!-- Mybatis | Mysql | Druid | PageHelper | Sharding-jdbc -->
+        <mybatis.version>3.3.0</mybatis.version>
+        <mapper.version>3.3.9</mapper.version>
+        <mybatis.spring.version>1.2.3</mybatis.spring.version>
+        <pagehelper.version>4.1.6</pagehelper.version>
+        <druid.version>1.0.15</druid.version>
 
     </properties>
 
 
     <dependencyManagement>
         <dependencies>
+
+            <!-- Import dependency management from Spring Boot -->
             <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-framework-bom</artifactId>
-                <version>${spring.version}</version>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!-- Import dependency management from Spring Cloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 
@@ -89,8 +127,25 @@
             <scope>compile</scope>
         </dependency>
 
-    </dependencies>
+        <!--日志-->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
 
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+
+    </dependencies>
 
 
     <build>
@@ -111,6 +166,19 @@
                 <configuration>
                     <skip>true</skip>
                 </configuration>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <!--<executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>-->
             </plugin>
         </plugins>
     </build>
