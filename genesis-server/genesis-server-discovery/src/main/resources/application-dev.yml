@@ -1,16 +1,45 @@
+---
+spring:
+  application:
+    name: eureka-server-clustered
+  profiles: primary
 server:
-  port: 8761                    # 指定该Eureka实例的端口
+  port: 8011
 eureka:
   instance:
-    hostname: discovery         # 指定该Eureka实例的主机名
-  enableSelfPreservation: false
-#  server:
-#    enable-self-preservation: false
+    hostname: eureka-primary
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-
-# 参考文档：http://projects.spring.io/spring-cloud/docs/1.0.3/spring-cloud.html#_standalone_mode
-# 参考文档：http://my.oschina.net/buwei/blog/618756
+      defaultZone: http://eureka-secondary:8012/eureka/,http://eureka-tertiary:8013/eureka/
+---
+spring:
+  application:
+    name: eureka-server-clustered
+  profiles: secondary
+server:
+  port: 8012
+eureka:
+  instance:
+    hostname: eureka-secondary
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://eureka-tertiary:8013/eureka/,http://eureka-primary:8011/eureka/
+---
+spring:
+  application:
+    name: eureka-server-clustered
+  profiles: tertiary
+server:
+  port: 8013
+eureka:
+  instance:
+    hostname: eureka-tertiary
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://eureka-primary:8011/eureka/,http://eureka-secondary:8012/eureka/
