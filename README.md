@@ -16,7 +16,8 @@ genesis 是一个基于Spring cloud(Camden.RELEASE) Spring Boot(1.4.1.RELEASE) M
 | ---------------------------------------- | ---- | ---------------------- | --------------- |
 | genesis-server-discovery               | 8761 | 服务注册中心            | 无            |
 | genesis-server-config               | 无 | 服务配置中心(更新中...)            | 无            |
-| genesis-server-gateway               | 无 | 服务网关(更新中...)    
+| genesis-server-gateway               | 8050 | 服务网关    | 无            |
+| genesis-server-monitor               | 无 | 服务监控(更新中...)    | 无            |
 #### 3. Spring(genessis-spring)扩展组件说明
 | 项目名称                                     | 端口   | 描述                     | URL             |
 | ---------------------------------------- | ---- | ---------------------- | --------------- |
