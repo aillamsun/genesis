@@ -14,6 +14,7 @@
         <module>genesis-demo</module>
         <module>genesis-demo-goods-service</module>
         <module>genesis-demo-order-service</module>
+        <module>genesis-demo-goods-service2</module>
         <!--<module>genesis-demo-goods-service</module>-->
 
     </modules>
@@ -128,11 +129,12 @@
         </dependency>
 
         <!--日志-->
-        <dependency>
+
+     <!--   <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>${log4j.version}</version>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>com.google.guava</groupId>

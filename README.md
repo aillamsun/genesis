@@ -25,6 +25,7 @@ genesis 是一个基于Spring cloud(Camden.RELEASE) Spring Boot(1.4.1.RELEASE) M
 | ---------------------------------------- | ---- | ---------------------- | --------------- |
 | genesis-demo                | 8080 | API接口            | 无            |
 | genesis-demo-goods-service              | 8081 | Goods服务提供者              | 无            |
+| genesis-demo-goods-service2              | 8083 | Goods服务提供者(用于启动测试 API goods模块Feign Client负载均衡)              | 无            |
 | genesis-demo-order-service              | 8082 | Order服务提供者              | 无            |
 
 ## 架构图(目前待完善)
