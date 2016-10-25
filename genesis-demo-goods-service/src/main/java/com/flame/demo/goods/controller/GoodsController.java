@@ -1,9 +1,12 @@
 package com.flame.demo.goods.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.flame.core.response.BaseResult;
 import com.flame.core.web.controller.BaseController;
 import com.flame.demo.goods.service.GoodsService;
 import com.flame.model.Goods;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +20,7 @@ import java.util.List;
 @RequestMapping("/goods")
 public class GoodsController extends BaseController {
 
+    private final Logger log = LoggerFactory.getLogger(GoodsController.class);
 
     @Autowired
     private GoodsService goodsService;
@@ -55,6 +59,7 @@ public class GoodsController extends BaseController {
     @GetMapping("/{goods_id}")
     public Goods getGoodsById(@PathVariable("goods_id") Long goods_id) {
         Goods goods = goodsService.selectByKey(goods_id);
+        log.info(JSON.toJSONString(goods));
         return goods;
     }
 

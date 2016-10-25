@@ -10,6 +10,7 @@ server:
 logging:
     level:
         tk.mybatis: DEBUG
+    config: classpath:logback-spring.xml
 
 spring:
   application:
