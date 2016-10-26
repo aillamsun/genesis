@@ -75,7 +75,7 @@ eureka.client.serviceUrl.defaultZone=http://discovery1:8761/eureka/
 java -jar discovery1-1.0.0.jar  --spring.profiles.active=discovery1
 java -jar discovery2-1.0.0.jar --spring.profiles.active=discovery2
 ```
-### 命令启动格式1：
+### 命令启动格式2：
 
 #### 添加文件 application.properties
 ```java
