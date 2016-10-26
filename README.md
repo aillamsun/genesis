@@ -53,7 +53,9 @@ genesis 是一个基于Spring cloud(Camden.RELEASE) Spring Boot(1.4.1.RELEASE) M
 
 > * 3,以后线上可以使用一个工程即可 如下：
 
-application-discovery1.properties
+
+
+#### application-discovery1.properties
 ```java
 spring.application.name=eureka-server-clustered
 server.port=8761
@@ -61,17 +63,29 @@ eureka.instance.hostname=discovery1
 eureka.client.serviceUrl.defaultZone=http://discovery2:8762/eureka/
 ```
 
-application-discovery2.properties
+#### application-discovery2.properties
 ```java
 spring.application.name=eureka-server-clustered
 server.port=8762
 eureka.instance.hostname=discovery2
 eureka.client.serviceUrl.defaultZone=http://discovery1:8761/eureka/
 ```
-	启动格式：
+### 命令启动格式1：
 ```java
 java -jar discovery1-1.0.0.jar  --spring.profiles.active=discovery1
 java -jar discovery2-1.0.0.jar --spring.profiles.active=discovery2
+```
+### 命令启动格式1：
+
+#### 添加文件 application.properties
+```java
+spring.profiles.active=discovery1
+或者
+spring.profiles.active=discovery2
+```
+命令修改为：
+```java
+java -jar discovery1-1.0.0.jar
 ```
 	
 ### 效果图:
