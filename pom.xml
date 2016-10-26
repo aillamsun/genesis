@@ -51,6 +51,9 @@
         <pagehelper.version>4.1.6</pagehelper.version>
         <druid.version>1.0.15</druid.version>
 
+        <!-- Docker -->
+        <docker.plugin.version>0.3.258</docker.plugin.version>
+
     </properties>
 
 

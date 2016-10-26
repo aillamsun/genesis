@@ -15,9 +15,10 @@ genesis 是一个基于Spring cloud(Camden.RELEASE) Spring Boot(1.4.1.RELEASE) M
 | 项目名称                                     | 端口   | 描述                     | URL             |
 | ---------------------------------------- | ---- | ---------------------- | --------------- |
 | genesis-server-discovery               | 8761 | 服务注册中心            | 无            |
+| genesis-server-discovery2              | 8762 | 服务注册中心2(用作和8761实现高可用注册中心)            | 无            |
 | genesis-server-config               | 无 | 服务配置中心(更新中...)            | 无            |
 | genesis-server-gateway               | 8050 | 服务网关    | 无            |
-| genesis-server-monitor               | 无 | 服务监控(更新中...)    | 无            |
+| genesis-server-monitor               | 8030 | 服务监控(hystrix-dashboard)    | 无            |
 #### 3. Spring(genessis-spring)扩展组件说明
 | 项目名称                                     | 端口   | 描述                     | URL             |
 | ---------------------------------------- | ---- | ---------------------- | --------------- |
@@ -35,7 +36,49 @@ genesis 是一个基于Spring cloud(Camden.RELEASE) Spring Boot(1.4.1.RELEASE) M
 ![cmd-markdown-logo](https://www.zybuluo.com/static/img/logo.png)
 
 
-## 服务中心HA说明(目前待完善)
+## 服务中心HA说明
+| 项目名称                                     | 端口   | 描述                     | URL             |
+| ---------------------------------------- | ---- | ---------------------- | --------------- |
+| genesis-server-discovery               | 8761 | 服务注册中心            | 无            |
+| genesis-server-discovery2              | 8762 | 服务注册中心2(用作和8761实现高可用注册中心)            | 无            |
+
+> * 1,（C:\Windows\System32\drivers\etc\hosts文件）
+	127.0.0.1 discovery1
+	127.0.0.1 discovery2
+	
+
+> * 2,每个配置里面都有一个application.properties，本机为了方便在idea工具启动  所以使用了两个项目
+
+> * 3,以后线上可以使用一个工程即可 如下：
+	
+	application-discovery1.properties
+		```java
+		spring.application.name=eureka-server-clustered
+		server.port=8761
+		eureka.instance.hostname=discovery1
+
+		eureka.client.serviceUrl.defaultZone=http://discovery2:8762/eureka/
+		```
+
+	application-discovery2.properties
+		```java
+		spring.application.name=eureka-server-clustered
+		server.port=8762
+		eureka.instance.hostname=discovery2
+		eureka.client.serviceUrl.defaultZone=http://discovery1:8761/eureka/
+		```
+	启动格式：
+	```java
+	java -jar genesis-server-discovery-1.0.0.jar --spring.profiles.active=discovery1
+	java -jar egenesis-server-discovery-1.0.0.jar --spring.profiles.active=discovery2
+	```
+	
+	效果图:
+	[discovery1](http://discovery1:8761)
+	![server-demo](http://p1.bqimg.com/1949/cbb9020eee0a8c69.png)
+	[discovery2](http://discovery2:8762)
+	![server-demo](http://p1.bqimg.com/1949/cbb9020eee0a8c69.png)
+	
 
 ## 熔断监控视图(目前待完善)
 
