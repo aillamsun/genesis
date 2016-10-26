@@ -17,6 +17,7 @@
         <module>genesis-server-discovery</module>
         <module>genesis-server-gateway</module>
         <module>genesis-server-monitor</module>
+        <module>genesis-server-discovery2</module>
     </modules>
 
 </project>
