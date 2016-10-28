@@ -16,7 +16,8 @@ genesis 是一个基于Spring cloud(Camden.RELEASE) Spring Boot(1.4.1.RELEASE) M
 | ---------------------------------------- | ---- | ---------------------- | --------------- |
 | genesis-server-discovery               | 8761 | 服务注册中心            | 无            |
 | genesis-server-discovery2              | 8762 | 服务注册中心2(用作和8761实现高可用注册中心)            | 无            |
-| genesis-server-config               | 无 | 服务配置中心(更新中...)            | 无            |
+| genesis-server-config               | 8040 | 服务配置中心服务          | 无            |
+| genesis-server-config-client               | 8041 | 服务配置客户端测试            | 无            |
 | genesis-server-gateway               | 8050 | 服务网关    | 无            |
 | genesis-server-monitor               | 8030 | 服务监控(hystrix-dashboard)    | 无            |
 #### 3. Spring(genessis-spring)扩展组件说明
@@ -33,7 +34,9 @@ genesis 是一个基于Spring cloud(Camden.RELEASE) Spring Boot(1.4.1.RELEASE) M
 | genesis-demo-order-service              | 8082 | Order服务提供者              | 无            |
 
 ## 架构图(目前待完善)
-![cmd-markdown-logo](https://www.zybuluo.com/static/img/logo.png)
+
+后续会更新架构图出去，暂时先这样看着... 焦灼中..........
+![cmd-jiagou-logo](http://i1.piimg.com/1949/f54376551eeab7cc.png)
 
 
 ## 服务中心HA说明

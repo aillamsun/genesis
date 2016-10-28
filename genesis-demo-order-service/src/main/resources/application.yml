@@ -39,7 +39,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://discovery:8761/eureka/    # 指定注册中心的地址
+      defaultZone: http://discovery1:8761/eureka/,http://discovery2:8762/eureka/    # 指定注册中心的地址
     healthcheck:
       enabled: true
   instance:
