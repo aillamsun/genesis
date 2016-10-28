@@ -36,7 +36,7 @@ genesis 是一个基于Spring cloud(Camden.RELEASE) Spring Boot(1.4.1.RELEASE) M
 ## 架构图(目前待完善)
 
 后续会更新架构图出去，暂时先这样看着... 焦灼中..........
-![cmd-jiagou-logo](http://i1.piimg.com/1949/f54376551eeab7cc.png)
+![cmd-jiagou-logo](http://p1.bpimg.com/1949/f9a78370806c7786.png)
 
 
 ## 服务中心HA说明
