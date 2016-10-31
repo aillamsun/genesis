@@ -1,0 +1,26 @@
+server:
+    port: 8090
+    context-path: #/sungang/
+#    tomcat:
+#      basedir: logs
+#      accesslog:
+#        enabled: true
+#        directory: .
+
+spring:
+  application:
+    name: genesis-server-zipkin    # 项目名称尽量用小写
+
+# 日志
+logging:
+  config: classpath:logback-spring.xml
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery1:8761/eureka/,http://discovery2:8762/eureka/    # 指定注册中心的地址
+    healthcheck:
+      enabled: true
+  instance:
+      preferIpAddress: true
+
