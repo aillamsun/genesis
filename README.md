@@ -3,7 +3,7 @@
 Genesis 中文意思: 起源, 哈哈哈哈......
 ------
 ## 技术架构
-genesis 是一个基于Spring cloud(Camden.RELEASE) Spring Boot(1.4.1.RELEASE) Mybatis(3.3.0) 通用Mapper 通用分页Pagehelper完成的一个基础组件架构，后面会持续更新...
+genesis 是一个基于Spring cloud(Camden.SR1) Spring Boot(1.4.1.RELEASE) Mybatis(3.3.0) 通用Mapper 通用分页Pagehelper完成的一个基础组件架构，后面会持续更新...
 ## MAVEN模块说明
 #### 1. 基础组件说明
 | 项目名称                                     | 端口   | 描述                     | URL             |
@@ -20,6 +20,11 @@ genesis 是一个基于Spring cloud(Camden.RELEASE) Spring Boot(1.4.1.RELEASE) M
 | genesis-server-config-client               | 8041 | 服务配置客户端测试            | 无            |
 | genesis-server-gateway               | 8050 | 服务网关    | 无            |
 | genesis-server-monitor               | 8030 | 服务监控(hystrix-dashboard)    | 无            |
+| genesis-server-security               | 无 | security    | 无            | 
+| genesis-server-sleuth               | 无 | sleuth    | 无            |
+| genesis-server-zipkin               | 8090 |zipkin    | 无            |
+| genesis-server-bus-kafka               | 无 |bus-kafka    | 无            |
+| genesis-server-bus-amqp                | 无 |bus-amqp    | 无            |
 #### 3. Spring(genessis-spring)扩展组件说明
 | 项目名称                                     | 端口   | 描述                     | URL             |
 | ---------------------------------------- | ---- | ---------------------- | --------------- |

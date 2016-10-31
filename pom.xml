@@ -13,10 +13,8 @@
         <module>genesis-server</module>
         <module>genesis-demo</module>
         <module>genesis-demo-goods-service</module>
-        <module>genesis-demo-order-service</module>
         <module>genesis-demo-goods-service2</module>
-        <!--<module>genesis-demo-goods-service</module>-->
-
+        <module>genesis-demo-order-service</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -40,11 +38,11 @@
         <slf4j.version>1.7.7</slf4j.version>
         <logback.version>1.1.7</logback.version>
 
-        <spring.version>4.1.2.RELEASE</spring.version>
+        <!--<spring.version>4.1.2.RELEASE</spring.version>-->
         <spring.boot.version>1.4.1.RELEASE</spring.boot.version>
-        <spring.cloud.version>Camden.RELEASE</spring.cloud.version>
+        <spring.cloud.version>Camden.SR1</spring.cloud.version>
 
-        <!-- Mybatis | Mysql | Druid | PageHelper | Sharding-jdbc -->
+        <!-- Mybatis | Mysql | Druid | PageHelper-->
         <mybatis.version>3.3.0</mybatis.version>
         <mapper.version>3.3.9</mapper.version>
         <mybatis.spring.version>1.2.3</mybatis.spring.version>
@@ -186,5 +184,35 @@
                 </executions>-->
             </plugin>
         </plugins>
+
+        <!-- maven打包引用静态资源 -->
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                    <include>**/*.txt</include>
+                    <include>**/*.ftl</include>
+                    <include>**/*.js</include>
+                    <include>**/*.css</include>
+                    <include>**/*.png</include>
+                    <include>**/*.jpg</include>
+                    <include>**/*.gif</include>
+                    <include>**/*.eot</include>
+                    <include>**/*.svg</include>
+                    <include>**/*.ttf</include>
+                    <include>**/*.woff</include>
+                    <include>**/*.woff2</include>
+                    <include>**/*.ico</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
 </project>

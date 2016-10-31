@@ -19,6 +19,11 @@
         <module>genesis-server-monitor</module>
         <module>genesis-server-discovery2</module>
         <module>genesis-server-config-client</module>
+        <module>genesis-server-zipkin</module>
+        <module>genesis-server-sleuth</module>
+        <module>genesis-server-bus-kafka</module>
+        <module>genesis-server-bus-amqp</module>
+        <module>genesis-server-security</module>
     </modules>
 
 </project>
