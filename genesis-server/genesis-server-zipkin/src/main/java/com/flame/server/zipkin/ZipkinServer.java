@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import zipkin.server.EnableZipkinServer;
 
@@ -19,9 +20,12 @@ public class ZipkinServer {
     private static final Logger logger = LoggerFactory.getLogger(ZipkinServer.class);
 
     public static void main(String[] args) throws Exception {
-        //开启监控 http://localhost:8080/health
-        SpringApplication.run(ZipkinServer.class, args);
+        new SpringApplicationBuilder(SpringApplication.class).web(true).run(args);
+    }
 
+    //程序首次启动调用
+    public void run(String... strings) throws Exception {
+        System.out.println("Genesis Server Zipkin Boot Successfully");
     }
 }
 

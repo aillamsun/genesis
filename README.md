@@ -21,8 +21,8 @@ genesis 是一个基于Spring cloud(Camden.SR1) Spring Boot(1.4.1.RELEASE) Mybat
 | genesis-server-gateway               | 8050 | 服务网关    | 无            |
 | genesis-server-monitor               | 8030 | 服务监控(hystrix-dashboard)    | 无            |
 | genesis-server-security               | 无 | security    | 无            | 
-| genesis-server-sleuth               | 无 | sleuth    | 无            |
-| genesis-server-zipkin               | 8090 |zipkin    | 无            |
+| genesis-server-sleuth               | 无 | Spring Cloud Sleuth是对Zipkin的一个封装(和Zipkin集成)    | 无            |
+| genesis-server-zipkin               | 8090 |Zipkin 对Spring Cloud应用进行服务追踪分析(主要和Sleuth)    | 无            |
 | genesis-server-bus-kafka               | 无 |bus-kafka    | 无            |
 | genesis-server-bus-amqp                | 无 |bus-amqp    | 无            |
 #### 3. Spring(genessis-spring)扩展组件说明
