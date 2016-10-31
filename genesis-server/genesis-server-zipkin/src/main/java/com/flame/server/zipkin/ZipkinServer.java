@@ -13,7 +13,7 @@ import zipkin.server.EnableZipkinServer;
  */
 @EnableZipkinServer
 @EnableDiscoveryClient
-@SpringBootApplication(scanBasePackages = {"com.flame"})
+@SpringBootApplication/*(scanBasePackages = {"com.flame"})*/
 public class ZipkinServer {
 
 

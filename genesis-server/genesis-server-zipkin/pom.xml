@@ -18,11 +18,7 @@
     </properties>
 
 
-
     <dependencies>
-
-
-
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
@@ -33,13 +29,11 @@
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
 
-
         <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-sleuth-zipkin-stream -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-sleuth-zipkin-stream</artifactId>
         </dependency>
-
 
         <dependency>
             <groupId>io.zipkin.java</groupId>
