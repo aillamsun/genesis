@@ -17,7 +17,7 @@ genesis 是一个基于Spring cloud(Camden.SR1) Spring Boot(1.4.1.RELEASE) Mybat
 | genesis-server-discovery               | 8761 | 服务注册中心            | 无            |
 | genesis-server-discovery2              | 8762 | 服务注册中心2(用作和8761实现高可用注册中心)            | 无            |
 | genesis-server-config               | 8040 | 服务配置中心服务          | 无            |
-| genesis-server-config-client               | 8041 | 服务配置客户端测试            | 无            |
+| genesis-server-config-client               | 8041 | 服务配置客户端测试启动访问(ip:port/message打印)            | 无            |
 | genesis-server-gateway               | 8050 | 服务网关    | 无            |
 | genesis-server-monitor               | 8030 | 服务监控(hystrix-dashboard)    | 无            |
 | genesis-server-security               | 无 | security    | 无            | 

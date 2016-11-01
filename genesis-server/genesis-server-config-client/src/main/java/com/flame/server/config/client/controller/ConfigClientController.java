@@ -17,7 +17,7 @@ public class ConfigClientController {
     private String message;
 
     @GetMapping("/message")
-    public void getMessage() {
-        System.out.println(message);
+    public String getMessage() {
+        return  message;
     }
 }
