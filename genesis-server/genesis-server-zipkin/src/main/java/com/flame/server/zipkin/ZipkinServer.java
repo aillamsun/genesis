@@ -20,7 +20,7 @@ public class ZipkinServer {
     private static final Logger logger = LoggerFactory.getLogger(ZipkinServer.class);
 
     public static void main(String[] args) throws Exception {
-        new SpringApplicationBuilder(SpringApplication.class).web(true).run(args);
+        new SpringApplicationBuilder(ZipkinServer.class).web(true).run(args);
     }
 
     //程序首次启动调用

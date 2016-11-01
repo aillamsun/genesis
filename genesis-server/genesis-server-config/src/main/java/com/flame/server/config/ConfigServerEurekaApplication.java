@@ -2,6 +2,7 @@ package com.flame.server.config;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 
@@ -15,10 +16,11 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 @SpringBootApplication
 @EnableConfigServer
 @RefreshScope
-public class ConfigServerApplication {
+@EnableDiscoveryClient
+public class ConfigServerEurekaApplication {
 
     public static void main(String[] args) throws Exception {
-        new SpringApplicationBuilder(ConfigServerApplication.class).web(true).run(args);
+        new SpringApplicationBuilder(ConfigServerEurekaApplication.class).web(true).run(args);
     }
 
     //程序首次启动调用
