@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope
 public class ConfigClientController {
 
-    @Value("${profile}")
-    private String profile;
+    @Value("${message}")
+    private String message;
 
-    @GetMapping("/hello")
-    public String hello() {
-        return this.profile;
+    @GetMapping("/message")
+    public void getMessage() {
+        System.out.println(message);
     }
 }
