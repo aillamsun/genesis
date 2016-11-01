@@ -17,7 +17,7 @@ public class ConfigClientController {
     private String message;
 
     @GetMapping("/message")
-    public String getMessage() {
-        return  message;
+    public String hello() {
+        return this.message;
     }
 }
