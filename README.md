@@ -44,7 +44,6 @@ genesis 是一个基于Spring cloud(Camden.SR1) Spring Boot(1.4.1.RELEASE) Mybat
 
 ![cmd-jiagou-logo](http://i1.piimg.com/1949/9c5d405775f32e78.png)
 
-
 ## 服务中心HA说明
 | 项目名称                                     | 端口   | 描述                     | URL             |
 | ---------------------------------------- | ---- | ---------------------- | --------------- |
