@@ -42,13 +42,13 @@ genesis 是一个基于Spring cloud(Camden.SR1) Spring Boot(1.4.1.RELEASE) Mybat
 
 后续会更新架构图出去，暂时先这样看着... 焦灼中..........
 
-![cmd-jiagou-logo](http://i1.piimg.com/1949/9c5d405775f32e78.png)
+![Markdown](http://i1.piimg.com/1949/9c5d405775f32e78.png)
 
 ## 服务中心HA说明
 | 项目名称                                     | 端口   | 描述                     | URL             |
 | ---------------------------------------- | ---- | ---------------------- | --------------- |
-| genesis-server-discovery               | 8761 | 服务注册中心            | 无            |
-| genesis-server-discovery2              | 8762 | 服务注册中心2(用作和8761实现高可用注册中心)            | 无            |
+| genesis-microservices-discovery               | 8761 | 服务注册中心            | 无            |
+| genesis-microservices-discovery2              | 8762 | 服务注册中心2(用作和8761实现高可用注册中心)            | 无            |
 
 > * 1,（C:\Windows\System32\drivers\etc\hosts文件）
 ```java
@@ -115,7 +115,7 @@ java -jar discovery1-1.0.0.jar
 > * 通过API文档Try 就可以了
 
 #### 3, 服务注册展示：
-![server-demo](http://i1.piimg.com/1949/fb0fc9336867151c.png)
+![Markdown](http://i1.piimg.com/1949/fb0fc9336867151c.png)
 
 
 ## API 文档访问
