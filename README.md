@@ -42,7 +42,7 @@ genesis 是一个基于Spring cloud(Camden.SR1) Spring Boot(1.4.1.RELEASE) Mybat
 
 后续会更新架构图出去，暂时先这样看着... 焦灼中..........
 
-![cmd-jiagou-logo](http://p1.bpimg.com/1949/f9a78370806c7786.png)
+![cmd-jiagou-logo](http://i1.piimg.com/1949/9c5d405775f32e78.png)
 
 
 ## 服务中心HA说明
@@ -108,21 +108,15 @@ java -jar discovery1-1.0.0.jar
 ## 熔断监控视图(目前待完善)
 
 ## 使用说明
-#### 1,主机名配置：
-| 主机名配置（C:\Windows\System32\drivers\etc\hosts文件） |
-| ---------------------------------------- |
-| 127.0.0.1 discovery config-server gateway movie user feign ribbon |
-
-
-#### 2,项目启动：
-> * 数据库脚本 genesis-demo resources/db/下面spring-cloud-test.sql
-> * 首先启动：genesis-server-discovery 注册中心,访问:ip:8761
-> * 启动API genesis-demo 访问http://localhost:8080/swagger-ui.html
-> * 分别启动 两个服务提供者
+#### 1,项目启动：
+> * 数据库脚本 genesis-provider resources/db/下面spring-cloud-test.sql
+> * 首先启动：genesis-microservices-discovery 和 genesis-microservices-discovery2
+> * 启动API genesis-provider 访问http://localhost:8080/swagger-ui.html
+> * 分别启动 两个服务提供者 genesis-provider-*
 > * 通过API文档Try 就可以了
 
 #### 3, 服务注册展示：
-![server-demo](http://p1.bqimg.com/1949/cbb9020eee0a8c69.png)
+![server-demo](http://i1.piimg.com/1949/fb0fc9336867151c.png)
 
 
 ## API 文档访问
