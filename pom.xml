@@ -10,11 +10,8 @@
         <module>genesis-common</module>
         <module>genesis-model</module>
         <module>genesis-spring</module>
-        <module>genesis-server</module>
-        <module>genesis-demo</module>
-        <module>genesis-demo-goods-service</module>
-        <module>genesis-demo-goods-service2</module>
-        <module>genesis-demo-order-service</module>
+        <module>genesis-microservices</module>
+        <module>genesis-examples</module>
     </modules>
     <packaging>pom</packaging>
 

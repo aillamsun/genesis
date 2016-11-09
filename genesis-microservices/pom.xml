@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>genesis</artifactId>
+        <groupId>com.flame</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>genesis-microservices</artifactId>
+    <packaging>pom</packaging>
+
+    <name>genesis-microservices</name>
+    <url>http://maven.apache.org</url>
+    <modules>
+        <module>genesis-microservices-config</module>
+        <module>genesis-microservices-discovery</module>
+        <module>genesis-microservices-gateway</module>
+        <module>genesis-microservices-monitor</module>
+        <module>genesis-microservices-discovery2</module>
+        <module>genesis-microservices-config-client</module>
+        <module>genesis-microservices-zipkin</module>
+        <module>genesis-microservices-sleuth</module>
+        <module>genesis-microservices-bus-kafka</module>
+        <module>genesis-microservices-bus-amqp</module>
+        <module>genesis-microservices-security</module>
+    </modules>
+
+</project>

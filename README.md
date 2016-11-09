@@ -11,32 +11,32 @@ genesis 是一个基于Spring cloud(Camden.SR1) Spring Boot(1.4.1.RELEASE) Mybat
 | genesis-common                | 无 | 公共模块（工具类,资源......）            | 无            |
 | genesis-core               | 无 | 核心代码               | 无            |
 | genesis-model               | 无 | 公共实体对象      
-#### 2. Spring Cloud(genesis-server)组件说明
+#### 2. Spring Cloud(genesis-microservices)组件说明
 | 项目名称                                     | 端口   | 描述                     | URL             |
 | ---------------------------------------- | ---- | ---------------------- | --------------- |
-| genesis-server-discovery               | 8761 | 服务注册中心            | 无            |
-| genesis-server-discovery2              | 8762 | 服务注册中心2(用作和8761实现高可用注册中心)            | 无            |
-| genesis-server-config               | 8040 | 服务配置中心服务          | 无            |
-| genesis-server-config-client               | 8041 | 服务配置客户端测试启动访问(ip:port/message打印)            | 无            |
-| genesis-server-gateway               | 8050 | 服务网关    | 无            |
-| genesis-server-monitor               | 8030 | 服务监控(hystrix-dashboard)    | 无            |
-| genesis-server-security               | 无 | security    | 无            | 
-| genesis-server-sleuth               | 无 | Spring Cloud Sleuth是对Zipkin的一个封装(和Zipkin集成)    | 无            |
-| genesis-server-zipkin               | 8090 |Zipkin 对Spring Cloud应用进行服务追踪分析(主要和Sleuth)    | 无            |
-| genesis-server-bus-kafka               | 无 |bus-kafka    | 无            |
-| genesis-server-bus-amqp                | 无 |bus-amqp    | 无            |
+| genesis-microservices-discovery               | 8761 | 服务注册中心            | 无            |
+| genesis-microservices-discovery2              | 8762 | 服务注册中心2(用作和8761实现高可用注册中心)            | 无            |
+| genesis-microservices-config               | 8040 | 服务配置中心服务          | 无            |
+| genesis-microservices-config-client               | 8041 | 服务配置客户端测试启动访问(ip:port/message打印)            | 无            |
+| genesis-microservices-gateway               | 8050 | 服务网关    | 无            |
+| genesis-microservices-monitor               | 8030 | 服务监控(hystrix-dashboard)    | 无            |
+| genesis-microservices-security               | 无 | security    | 无            | 
+| genesis-microservices-sleuth               | 无 | Spring Cloud Sleuth是对Zipkin的一个封装(和Zipkin集成)    | 无            |
+| genesis-microservices-zipkin               | 8090 |Zipkin 对Spring Cloud应用进行服务追踪分析(主要和Sleuth)    | 无            |
+| genesis-microservices-bus-kafka               | 无 |bus-kafka    | 无            |
+| genesis-microservices-bus-amqp                | 无 |bus-amqp    | 无            |
 #### 3. Spring(genessis-spring)扩展组件说明
 | 项目名称                                     | 端口   | 描述                     | URL             |
 | ---------------------------------------- | ---- | ---------------------- | --------------- |
 | genesis-spring-extends                | 无 | Spring 扩展(更新中...)            | 无            |
 | genesis-spring-plugins              | 无 | Spring 插件(更新中...)               | 无            |
-#### 4. Demo 提供组件使用说明
+#### 4. Examples(genesis-examples) 提供真是服务使用
 | 项目名称                                     | 端口   | 描述                     | URL             |
 | ---------------------------------------- | ---- | ---------------------- | --------------- |
-| genesis-demo                | 8080 | API接口            | 无            |
-| genesis-demo-goods-service              | 8081 | Goods服务提供者              | 无            |
-| genesis-demo-goods-service2              | 8083 | Goods服务提供者(用于启动测试 API goods模块Feign Client负载均衡)              | 无            |
-| genesis-demo-order-service              | 8082 | Order服务提供者              | 无            |
+| genesis-provider                | 8080 | API接口            | 无            |
+| genesis-provider-goods              | 8081 | Goods服务提供者              | 无            |
+| genesis-provider-goods2              | 8082 | Goods服务提供者(用于启动测试 API goods模块Feign Client负载均衡)              | 无            2z
+| genesis-provider-order              | 8083 | Order服务提供者              | 无            |
 
 ## 架构图(目前待完善)
 
