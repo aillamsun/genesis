@@ -1,5 +1,6 @@
 package com.flame.core.service;
 
+import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Condition;
 import tk.mybatis.mapper.entity.Example;
 
@@ -8,6 +9,7 @@ import java.util.List;
 /**
  * Created by sungang on 2016/10/21.
  */
+@Service
 public interface IService<T> {
 
     /**
