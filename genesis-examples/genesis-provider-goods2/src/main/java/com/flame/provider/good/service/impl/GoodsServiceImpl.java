@@ -13,6 +13,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class GoodsServiceImpl extends BaseServiceImpl<Goods> implements GoodsService {
 
-    @Autowired
-    private GoodsMapper goodsMapper;
+    private final GoodsMapper goodsMapper;
+
+    public GoodsServiceImpl(GoodsMapper goodsMapper) {
+        super(goodsMapper);
+        this.goodsMapper = goodsMapper;
+    }
 }

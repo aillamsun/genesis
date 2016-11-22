@@ -4,7 +4,6 @@ import com.flame.core.service.impl.BaseServiceImpl;
 import com.flame.model.Goods;
 import com.flame.provider.good.mapper.GoodsMapper;
 import com.flame.provider.good.service.GoodsService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,6 +12,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class GoodsServiceImpl extends BaseServiceImpl<Goods> implements GoodsService {
 
-    @Autowired
-    private GoodsMapper goodsMapper;
+
+    private final GoodsMapper goodsMapper;
+
+    public GoodsServiceImpl(GoodsMapper goodsMapper) {
+        super(goodsMapper);
+        this.goodsMapper = goodsMapper;
+    }
 }

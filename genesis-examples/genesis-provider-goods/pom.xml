@@ -21,22 +21,25 @@
 
         <dependency>
             <groupId>com.flame</groupId>
+            <artifactId>genesis-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.flame</groupId>
+            <artifactId>genesis-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.flame</groupId>
             <artifactId>genesis-model</artifactId>
             <version>${project.version}</version>
         </dependency>
 
-        <!-- Mybatis | Mysql | Druid | PageHelper | Sharding-jdbc -->
 
-        <!--分页插件-->
         <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper</artifactId>
-            <version>${pagehelper.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis-spring</artifactId>
-            <version>${mybatis.spring.version}</version>
+            <groupId>com.flame</groupId>
+            <artifactId>genesis-spring-plugins-mybatis</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
 

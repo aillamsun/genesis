@@ -5,6 +5,7 @@ import com.flame.core.response.BaseResult;
 import com.flame.core.web.controller.BaseController;
 import com.flame.model.Goods;
 import com.flame.provider.good.service.GoodsService;
+import com.github.pagehelper.PageHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,21 @@ public class GoodsController extends BaseController {
 
     @Autowired
     private GoodsService goodsService;
+
+
+    @GetMapping
+    public List<Goods> getGoods() {
+        PageHelper.startPage(1,2);
+        List<Goods> goodsList = goodsService.selectAll();
+        return goodsList;
+    }
+
+    @GetMapping("/{goods_id}")
+    public Goods getGoodsById(@PathVariable("goods_id") Long goods_id) {
+        Goods goods = goodsService.selectByKey(goods_id);
+        log.info(JSON.toJSONString(goods));
+        return goods;
+    }
 
     /**
      * 商品添加
@@ -50,18 +66,7 @@ public class GoodsController extends BaseController {
     }
 
 
-    @GetMapping
-    public List<Goods> getGoods() {
-        List<Goods> goodsList = goodsService.selectAll();
-        return goodsList;
-    }
 
-    @GetMapping("/{goods_id}")
-    public Goods getGoodsById(@PathVariable("goods_id") Long goods_id) {
-        Goods goods = goodsService.selectByKey(goods_id);
-        log.info(JSON.toJSONString(goods));
-        return goods;
-    }
 
     @DeleteMapping("/{goods_id}")
     public BaseResult delGoods(@PathVariable("goods_id") Long goods_id) {
