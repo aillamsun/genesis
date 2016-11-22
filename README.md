@@ -30,11 +30,12 @@ genesis 是一个基于Spring cloud(Camden.SR1) Spring Boot(1.4.1.RELEASE) Mybat
 | ---------------------------------------- | ---- | ---------------------- | --------------- |
 | genesis-spring-extends                | 无 | Spring 扩展(更新中...)            | 无            |
 | genesis-spring-plugins              | 无 | Spring 插件(更新中...)               | 无            |
+| genesis-spring-plugins-mybatis             | 无 | Spring boot mybatis stater自定义(在genesis-provider-goods使用测试)             | 无            |
 #### 4. Examples(genesis-examples) 提供真是服务使用
 | 项目名称                                     | 端口   | 描述                     | URL             |
 | ---------------------------------------- | ---- | ---------------------- | --------------- |
 | genesis-provider                | 8080 | API接口            | 无            |
-| genesis-provider-goods              | 8081 | Goods服务提供者              | 无            |
+| genesis-provider-goods              | 8081 | Goods服务提供者(此服务使用了genesis-spring-plugins-mybatis stater)              | 无            |
 | genesis-provider-goods2              | 8082 | Goods服务提供者(用于启动测试 API goods模块Feign Client负载均衡)              | 无            2z
 | genesis-provider-order              | 8083 | Order服务提供者              | 无            |
 

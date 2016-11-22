@@ -25,6 +25,12 @@
         <junit.version>4.11</junit.version>
 
 
+
+        <apache.common.lang3.version>3.4</apache.common.lang3.version>
+        <apache.common.logging.version>1.2</apache.common.logging.version>
+        <apache.common.fileupload.version>1.3.1</apache.common.fileupload.version>
+        <apache.common.codec.version>1.10</apache.common.codec.version>
+
         <!-- Jar Tools -->
         <guava.version>19.0</guava.version>
         <joda.version>2.9.4</joda.version>
@@ -40,9 +46,9 @@
         <spring.cloud.version>Camden.RELEASE</spring.cloud.version>
 
         <!-- Mybatis | Mysql | Druid | PageHelper | Sharding-jdbc -->
-        <mybatis.version>3.3.0</mybatis.version>
+        <mybatis.version>3.4.1</mybatis.version>
         <mapper.version>3.3.9</mapper.version>
-        <mybatis.spring.version>1.2.3</mybatis.spring.version>
+        <mybatis.spring.version>1.3.0</mybatis.spring.version>
         <pagehelper.version>4.1.6</pagehelper.version>
         <druid.version>1.0.15</druid.version>
 
@@ -143,6 +149,24 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>${fastjson.version}</version>
+        </dependency>
+
+
+        <!--commons-->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>${apache.common.fileupload.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${apache.common.lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${apache.common.codec.version}</version>
         </dependency>
 
     </dependencies>
