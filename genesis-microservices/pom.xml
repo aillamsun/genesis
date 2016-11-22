@@ -24,6 +24,7 @@
         <module>genesis-microservices-bus-kafka</module>
         <module>genesis-microservices-bus-amqp</module>
         <module>genesis-microservices-security</module>
+        <module>genesis-microservices-discovery3</module>
     </modules>
 
 </project>
