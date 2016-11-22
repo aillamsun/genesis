@@ -21,24 +21,9 @@
 
         <dependency>
             <groupId>com.flame</groupId>
-            <artifactId>genesis-common</artifactId>
+            <artifactId>genesis-spring-plugins-mybatis</artifactId>
             <version>${project.version}</version>
         </dependency>
-
-        <!-- Mybatis | Mysql | Druid | PageHelper | Sharding-jdbc -->
-
-        <!--通用Mapper-->
-        <dependency>
-            <groupId>tk.mybatis</groupId>
-            <artifactId>mapper</artifactId>
-            <version>${mapper.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis</artifactId>
-            <version>${mybatis.version}</version>
-        </dependency>
-
 
         <!-- Spring-->
         <dependency>

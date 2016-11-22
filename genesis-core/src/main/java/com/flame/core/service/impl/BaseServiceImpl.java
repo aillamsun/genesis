@@ -1,8 +1,8 @@
 package com.flame.core.service.impl;
 
-import com.flame.core.mapper.BaseMapper;
+import com.flame.core.model.BaseModel;
 import com.flame.core.service.IService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.flame.plugin.spring.mybatis.config.BaseMapper;
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.entity.Condition;
 import tk.mybatis.mapper.entity.Example;
@@ -12,10 +12,14 @@ import java.util.List;
 /**
  * Created by sungang on 2016/10/21.
  */
-public class BaseServiceImpl<T> implements IService<T> {
+public abstract class BaseServiceImpl<T extends BaseModel> implements IService<T> {
 
-    @Autowired
+//    @Autowired
     protected BaseMapper<T> mapper;
+
+    public BaseServiceImpl(BaseMapper<T> mapper){
+        this.mapper = mapper;
+    }
 
     public Mapper<T> getMapper() {
         return mapper;

@@ -1,5 +1,6 @@
 package com.flame.core.service;
 
+import com.flame.core.model.BaseModel;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Condition;
 import tk.mybatis.mapper.entity.Example;
@@ -10,7 +11,7 @@ import java.util.List;
  * Created by sungang on 2016/10/21.
  */
 @Service
-public interface IService<T> {
+public interface IService<T extends BaseModel> {
 
     /**
      * 根据实体中的属性进行查询，只能有一个返回值，有多个结果是抛出异常，查询条件使用等号
