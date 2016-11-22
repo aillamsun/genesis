@@ -15,6 +15,7 @@
 
 
     <dependencies>
+
         <dependency>
             <groupId>com.flame</groupId>
             <artifactId>genesis-common</artifactId>
@@ -25,8 +26,6 @@
             <artifactId>genesis-core</artifactId>
             <version>${project.version}</version>
         </dependency>
-
-
 
         <!-- Swagger UI-->
         <dependency>
