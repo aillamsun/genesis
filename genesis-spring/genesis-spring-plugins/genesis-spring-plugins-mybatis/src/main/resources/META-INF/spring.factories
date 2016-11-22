@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.flame.plugin.spring.mybatis.config.MybatisAutoConfiguration,\
+com.flame.plugin.spring.mybatis.config.MyBatisMapperScannerConfig

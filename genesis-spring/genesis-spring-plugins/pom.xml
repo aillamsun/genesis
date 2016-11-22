@@ -8,10 +8,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>genesis-spring-plugins</artifactId>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <name>genesis-spring-plugins</name>
     <url>http://maven.apache.org</url>
+    <modules>
+        <module>genesis-spring-plugins-mybatis</module>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
