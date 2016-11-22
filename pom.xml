@@ -43,7 +43,8 @@
 
         <spring.version>4.1.2.RELEASE</spring.version>
         <spring.boot.version>1.4.1.RELEASE</spring.boot.version>
-        <spring.cloud.version>Camden.RELEASE</spring.cloud.version>
+        <!--<spring.cloud.version>Camden.RELEASE</spring.cloud.version>-->
+        <spring.cloud.version>Camden.RC1</spring.cloud.version>
 
         <!-- Mybatis | Mysql | Druid | PageHelper | Sharding-jdbc -->
         <mybatis.version>3.4.1</mybatis.version>
