@@ -5,6 +5,14 @@
     <groupId>com.flame</groupId>
     <artifactId>genesis</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+
+    <!--<parent>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-parent</artifactId>-->
+        <!--<version>${spring.boot.version}</version>-->
+    <!--</parent>-->
+
     <modules>
         <module>genesis-core</module>
         <module>genesis-common</module>
@@ -43,8 +51,10 @@
 
         <spring.version>4.1.2.RELEASE</spring.version>
         <spring.boot.version>1.4.1.RELEASE</spring.boot.version>
-        <!--<spring.cloud.version>Camden.RELEASE</spring.cloud.version>-->
-        <spring.cloud.version>Camden.RC1</spring.cloud.version>
+        <!--Camden.RELEASE-->
+        <spring.cloud.version>Camden.RELEASE</spring.cloud.version>
+
+
 
         <!-- Mybatis | Mysql | Druid | PageHelper | Sharding-jdbc -->
         <mybatis.version>3.4.1</mybatis.version>
@@ -135,11 +145,8 @@
 
         <!--日志-->
 
-     <!--   <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>${log4j.version}</version>
-        </dependency>-->
+
+
 
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -172,7 +179,6 @@
 
     </dependencies>
 
-
     <build>
         <plugins>
             <plugin>
@@ -192,20 +198,22 @@
                     <skip>true</skip>
                 </configuration>
             </plugin>
-
-
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <!--<executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>-->
-            </plugin>
         </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
 
         <!-- maven打包引用静态资源 -->
         <resources>
