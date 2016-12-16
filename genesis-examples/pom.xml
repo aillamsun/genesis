@@ -17,6 +17,21 @@
         <module>genesis-provider-goods</module>
         <module>genesis-provider-order</module>
         <module>genesis-provider-goods2</module>
+        <module>genesis-common-config</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+    </dependencies>
 
 </project>
