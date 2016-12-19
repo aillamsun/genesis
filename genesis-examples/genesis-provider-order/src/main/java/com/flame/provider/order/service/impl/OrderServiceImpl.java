@@ -15,4 +15,9 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
 
     @Autowired
     private OrderMapper orderMapper;
+
+    public OrderServiceImpl(OrderMapper orderMapper) {
+        super(orderMapper);
+        this.orderMapper = orderMapper;
+    }
 }

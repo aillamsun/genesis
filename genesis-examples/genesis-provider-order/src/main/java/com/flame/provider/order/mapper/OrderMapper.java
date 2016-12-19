@@ -1,9 +1,10 @@
 package com.flame.provider.order.mapper;
 
 import com.flame.model.Order;
+import com.flame.plugin.spring.mybatis.config.BaseMapper;
 
 /**
  * Created by sungang on 2016/10/24.
  */
-public interface OrderMapper extends tk.mybatis.mapper.common.Mapper<Order>, tk.mybatis.mapper.common.ConditionMapper, tk.mybatis.mapper.common.MySqlMapper, tk.mybatis.mapper.common.IdsMapper {
+public interface OrderMapper extends BaseMapper<Order> {
 }

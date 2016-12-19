@@ -8,7 +8,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>genesis-provider-goods</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <name>genesis-provider-goods</name>
     <url>http://maven.apache.org</url>
@@ -41,6 +41,11 @@
             <artifactId>genesis-spring-plugins-mybatis</artifactId>
             <version>${project.version}</version>
         </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-jetty</artifactId>-->
+        <!--</dependency>-->
 
 
         <!-- 服务注册与发现 -->
@@ -78,12 +83,12 @@
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
-      <!--  <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>d
-            <version>5.2.4.Final</version>
-        </dependency>
-      -->
+        <!--  <dependency>
+              <groupId>org.hibernate</groupId>
+              <artifactId>hibernate-validator</artifactId>d
+              <version>5.2.4.Final</version>
+          </dependency>
+        -->
         <!--druid-->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -93,12 +98,6 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
         </dependency>
 
 
