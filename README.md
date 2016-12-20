@@ -16,7 +16,7 @@ genesis 是一个基于Spring cloud(Camden.SR1) Spring Boot(1.4.1.RELEASE) Mybat
 | ---------------------------------------- | ---- | ---------------------- | --------------- |
 | genesis-microservices-discovery               | 8761 | 服务注册中心(用作和8762 8763实现高可用注册中心)            | 无            |
 | genesis-microservices-discovery2              | 8762 | 服务注册中心2(用作和8761 8763实现高可用注册中心)            | 无            |
-| genesis-microservices-discovery2              | 8763 | 服务注册中心3(用作和8761 8762实现高可用注册中心)            | 无            |
+| genesis-microservices-discovery3              | 8763 | 服务注册中心3(用作和8761 8762实现高可用注册中心)            | 无            |
 | genesis-microservices-config               | 8040 | 服务配置中心服务          | 无            |
 | genesis-microservices-config-client               | 8041 | 服务配置客户端测试启动访问(ip:port/message打印)            | 无            |
 | genesis-microservices-gateway               | 8050 | 服务网关    | 无            |
@@ -46,18 +46,20 @@ genesis 是一个基于Spring cloud(Camden.SR1) Spring Boot(1.4.1.RELEASE) Mybat
 
 后续会更新架构图出去，暂时先这样看着... 焦灼中..........
 
-![Markdown](http://i1.piimg.com/1949/9c5d405775f32e78.png)
+![Markdown](http://p1.bqimg.com/1949/744b75531ed0a198.png)
 
 ## 服务中心HA说明
 | 项目名称                                     | 端口   | 描述                     | URL             |
 | ---------------------------------------- | ---- | ---------------------- | --------------- |
-| genesis-microservices-discovery               | 8761 | 服务注册中心            | 无            |
-| genesis-microservices-discovery2              | 8762 | 服务注册中心2(用作和8761实现高可用注册中心)            | 无            |
+| genesis-microservices-discovery               | 8761 | 服务注册中心(用作和8762 8763实现高可用注册中心)            | 无            |
+| genesis-microservices-discovery2              | 8762 | 服务注册中心2(用作和8761 8763实现高可用注册中心)            | 无            |
+| genesis-microservices-discovery3              | 8763 | 服务注册中心3(用作和8761 8762实现高可用注册中心)            | 无            |
 
 > * 1,（C:\Windows\System32\drivers\etc\hosts文件）
 ```java
 127.0.0.1 discovery1
 127.0.0.1 discovery2
+127.0.0.1 discovery3
 ```
 	
 
@@ -72,7 +74,7 @@ genesis 是一个基于Spring cloud(Camden.SR1) Spring Boot(1.4.1.RELEASE) Mybat
 spring.application.name=eureka-server-clustered
 server.port=8761
 eureka.instance.hostname=discovery1
-eureka.client.serviceUrl.defaultZone=http://discovery2:8762/eureka/
+eureka.client.serviceUrl.defaultZone=http://discovery2:8762/eureka/,http://discovery3:8763/eureka/
 ```
 
 #### application-discovery2.properties
@@ -80,12 +82,22 @@ eureka.client.serviceUrl.defaultZone=http://discovery2:8762/eureka/
 spring.application.name=eureka-server-clustered
 server.port=8762
 eureka.instance.hostname=discovery2
-eureka.client.serviceUrl.defaultZone=http://discovery1:8761/eureka/
+eureka.client.serviceUrl.defaultZone=http://discovery1:8761/eureka/,http://discovery3:8763/eureka/
 ```
+
+#### application-discovery3.properties
+```java
+spring.application.name=eureka-server-clustered
+server.port=8763
+eureka.instance.hostname=discovery3
+eureka.client.serviceUrl.defaultZone=http://discovery1:8761/eureka/,http://discovery2:8762/eureka/
+```
+
 ### 命令启动格式1：
 ```java
 java -jar discovery1-1.0.0.jar  --spring.profiles.active=discovery1
 java -jar discovery2-1.0.0.jar --spring.profiles.active=discovery2
+java -jar discovery3-1.0.0.jar --spring.profiles.active=discovery3
 ```
 ### 命令启动格式2：
 
