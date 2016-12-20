@@ -39,7 +39,7 @@ genesis 是一个基于Spring cloud(Camden.SR1) Spring Boot(1.4.1.RELEASE) Mybat
 | genesis-provider-by-feign                | 8080 | API接口(使用Feign)            | 无            |
 | genesis-provider-by-zuul                | 8051 | API接口网关(使用Zuul)            | 无            |
 | genesis-provider-goods              | 8081 | Goods服务提供者(此服务使用了genesis-spring-plugins-mybatis stater)              | 无            |
-| genesis-provider-goods2              | 8082 | Goods服务提供者(用于启动测试 API goods模块Feign Client负载均衡)              | 无            2z
+| genesis-provider-goods2              | 8082 | Goods服务提供者(用于启动测试 API goods模块Feign Client负载均衡)              | 无            
 | genesis-provider-order              | 8083 | Order服务提供者              | 无            |
 
 ## 架构图(目前待完善)
@@ -115,27 +115,29 @@ java -jar discovery1-1.0.0.jar
 ### 效果图:
 
 ### [访问discovery1](http://discovery1:8761)
-![discovery1](http://p1.bqimg.com/1949/742e4ba190751504.png)
+![discovery1](http://p1.bpimg.com/1949/1f7f7b2967a8efd3.png)
 ### [访问discovery2](http://discovery2:8762)
-![discovery2](http://p1.bqimg.com/1949/4a6ce06d3452ae63.png)
+![discovery2](http://p1.bpimg.com/1949/ecacb2a6b1ddbc12.png)
+### [访问discovery3](http://discovery3:8763)
+![discovery3](http://p1.bpimg.com/1949/8d08a1bd40c7ea48.png)
 	
 
 ## 熔断监控视图(目前待完善)
 
 ## 使用说明
 #### 1,项目启动：
-> * 数据库脚本 genesis-provider resources/db/下面spring-cloud-test.sql
-> * 首先启动：genesis-microservices-discovery 和 genesis-microservices-discovery2
-> * 启动API genesis-provider 访问http://localhost:8080/swagger-ui.html
-> * 分别启动 两个服务提供者 genesis-provider-*
-> * 通过API文档Try 就可以了
+> * 数据库脚本 genesis-common-config resources/db/下面spring-cloud-test.sql
+> * 首先启动：genesis-microservices-discovery 和 genesis-microservices-discovery2、genesis-microservices-discovery3
+> * 测试Fegin可以启动genesis-provider-by-feign。前提启动genesis-provider-good、genesis-provider-order
+> * 测试Zuul可以启动genesis-provider-by-zuul 。前提启动genesis-provider-good、genesis-provider-order
+> * genesis-provider-by-feign提供swgger UI 通过API文档Try 就可以了
 
 #### 3, 服务注册展示：
 ![Markdown](http://i1.piimg.com/1949/fb0fc9336867151c.png)
 
 
 ## API 文档访问
-> * 启动API genesis-demo 访问http://localhost:8080/swagger-ui.html
+> * 启动API genesis-provider-by-feign访问http://localhost:8080/swagger-ui.html
 ![api-demo](http://p1.bqimg.com/1949/6721d590be673013.png)
 
 ## 分布式事务测试(暂时没开发，后续更新...)
