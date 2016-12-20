@@ -13,11 +13,12 @@
     <name>genesis-examples</name>
     <url>http://maven.apache.org</url>
     <modules>
-        <module>genesis-provider</module>
+        <module>genesis-common-config</module>
+        <module>genesis-provider-by-feign</module>
+        <module>genesis-provider-by-zuul</module>
         <module>genesis-provider-goods</module>
         <module>genesis-provider-order</module>
         <module>genesis-provider-goods2</module>
-        <module>genesis-common-config</module>
     </modules>
 
     <dependencies>
