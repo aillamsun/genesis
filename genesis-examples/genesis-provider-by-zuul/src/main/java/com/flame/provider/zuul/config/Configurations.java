@@ -1,8 +1,6 @@
 package com.flame.provider.zuul.config;
 
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.cloud.netflix.zuul.filters.discovery.PatternServiceRouteMapper;
-import org.springframework.cloud.netflix.zuul.filters.discovery.ServiceRouteMapper;
+import com.flame.provider.zuul.filters.SimpleFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -20,4 +18,10 @@ public class Configurations {
 //    public PatternServiceRouteMapper serviceRouteMapper() {
 //        return new PatternServiceRouteMapper("(?<serviceId>^.+)/(?<version>v.+$)", "${serviceId}/${version}");
 //    }
+
+    @Bean
+    public SimpleFilter simpleFilter() {
+        return new SimpleFilter();
+    }
+
 }
