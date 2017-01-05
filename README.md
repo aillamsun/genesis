@@ -3,7 +3,8 @@
 Genesis 中文意思: 起源, 哈哈哈哈......
 ------
 ## 技术架构
-genesis 是一个基于Spring cloud(Camden.SR1) Spring Boot(1.4.1.RELEASE) Mybatis(3.3.0) 通用Mapper 通用分页Pagehelper完成的一个基础组件架构，后面会持续更新...
+genesis 是一个基于Spring cloud(Camden.SR1) Spring Boot(1.4.1.RELEASE) Mybatis(3.3.0) 通用Mapper 通用分页Pagehelper完成的一个基础组件架构，
+使用Spring Cloud Eureka、Feign、Zuul、Spring config、Zipkin、Sleuth等组件后面会持续更新...
 ## MAVEN模块说明
 #### 1. 基础组件说明
 | 项目名称                                     | 端口   | 描述                     | URL             |
