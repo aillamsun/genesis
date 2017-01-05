@@ -8,11 +8,12 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import zipkin.server.EnableZipkinServer;
 
 /**
+ * 利用 @EnableZipkinServer 声明方式创建Zipkin Server
  * Created by feel on 2016/10/29.
  */
+@SpringBootApplication
+//@EnableZipkinStreamServer
 @EnableZipkinServer
-@EnableDiscoveryClient
-@SpringBootApplication/*(scanBasePackages = {"com.flame"})*/
 public class ZipkinServer {
 
 
