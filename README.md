@@ -137,6 +137,8 @@ java -jar discovery1-1.0.0.jar
 > * 启动 Zipkin Server 服务demo  genesis-microservices-sleuth 端口 8092
 > * 启动测试 Zipkin、Sleuth 服务提供者  genesis-sleuth-zipkin-demo 端口 8093
 
+> * 直接调用 8092 Controller接口即可
+
 #### 2,跟踪列表效果图
 
 ![跟踪列表](http://i1.piimg.com/1949/09934fc78dda3bf6.png)
