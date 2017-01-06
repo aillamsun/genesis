@@ -25,6 +25,8 @@
         <module>genesis-microservices-bus-amqp</module>
         <module>genesis-microservices-security</module>
         <module>genesis-microservices-discovery3</module>
+        <module>genesis-microservices-hystrix-dashboard</module>
+        <module>genesis-microservices-hystrix-turbine</module>
     </modules>
 
 </project>
