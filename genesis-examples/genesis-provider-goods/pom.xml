@@ -54,21 +54,6 @@
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
 
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-
-
-
-
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
@@ -106,12 +91,33 @@
 
     </dependencies>
 
-    <!-- <build>
+    <build>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
          <plugins>
              <plugin>
                  <groupId>org.springframework.boot</groupId>
                  <artifactId>spring-boot-maven-plugin</artifactId>
              </plugin>
+
+             <!--  -->
+             <plugin>
+                 <groupId>org.apache.maven.plugins</groupId>
+                 <artifactId>maven-resources-plugin</artifactId>
+                 <version>3.0.2</version>
+                 <configuration>
+                     <delimiters>
+                         <delimiter>@</delimiter>
+                     </delimiters>
+                     <useDefaultDelimiters>false</useDefaultDelimiters>
+                 </configuration>
+             </plugin>
          </plugins>
-     </build>-->
+     </build>
 </project>
