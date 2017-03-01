@@ -51,7 +51,7 @@
 
         <spring.version>4.3.3.RELEASE</spring.version>
         <spring.boot.version>1.4.1.RELEASE</spring.boot.version>
-        <!--Camden.RELEASE-->
+        <!--Camden.RELEASE  对应 Spring Boot 1.4.x-->
         <spring.cloud.version>Camden.RELEASE</spring.cloud.version>
 
 
@@ -97,6 +97,7 @@
 
     <!--nexus 仓库 -->
     <repositories>
+    	<!--
         <repository>
             <id>nexus</id>
             <name>local private nexus</name>
@@ -129,7 +130,7 @@
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
-        </repository>
+        </repository>-->
     </repositories>
 
 
