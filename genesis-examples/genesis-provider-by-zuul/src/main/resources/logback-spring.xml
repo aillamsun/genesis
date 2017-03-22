@@ -9,11 +9,9 @@
 	debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。 -->
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
 	<!-- 定义日志文件 输入位置 -->
-	<property name="LOG_PATH" value="/logs/gateway" />
+	<property name="LOG_PATH" value="/Users/sungang/Documents/logs/gateway" />
 	<!-- 日志最大的历史 30天 -->
 	<property name="maxHistory" value="30"/>
-
-
 
 
 	<!-- ConsoleAppender 控制台输出日志 -->

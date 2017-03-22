@@ -1,6 +1,5 @@
 package com.flame.provider.zuul.config;
 
-import com.flame.provider.zuul.filters.SimpleFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
