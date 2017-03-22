@@ -11,20 +11,16 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-//开启Feign调用接口
-@EnableFeignClients
-//如果你不需要数据源,将它从auto-config排除
-//@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 //hystrix 监控
 @EnableCircuitBreaker
-public class GenesisProviderByFeignApp {
+public class GenesisProviderByRibbonApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(GenesisProviderByFeignApp.class,args);
+        SpringApplication.run(GenesisProviderByRibbonApp.class,args);
     }
     //程序首次启动调用
     public void run(String... strings) throws Exception {
-        System.out.println("GenesisProviderApp Successfully");
+        System.out.println("GenesisProviderByRibbonApp Successfully");
     }
 
 }
