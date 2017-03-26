@@ -2,6 +2,8 @@ package com.flame.provider;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
@@ -17,14 +19,17 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 //@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 //hystrix 监控
 @EnableCircuitBreaker
-public class GenesisProviderByFeignApp {
+public class GenesisProviderByFeignApp extends SpringBootServletInitializer{
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(GenesisProviderByFeignApp.class);
+    }
+
 
     public static void main(String[] args) {
-        SpringApplication.run(GenesisProviderByFeignApp.class,args);
-    }
-    //程序首次启动调用
-    public void run(String... strings) throws Exception {
-        System.out.println("GenesisProviderApp Successfully");
-    }
+        SpringApplication app = new SpringApplication(GenesisProviderByFeignApp.class);
 
+        app.run(args);
+    }
 }
