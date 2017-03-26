@@ -26,10 +26,10 @@ import java.util.Map.Entry;
  * @描述: http client请求工具类
  * @作者： 孙刚
  * @创建时间： 2014年9月21日 上午10:41:19
- * 
+ *
  * @修改人：xxx
  * @修改时间:xxxx-xx-xx
- * 
+ *
  */
 public class HttpClientUtils {
 
@@ -40,7 +40,7 @@ public class HttpClientUtils {
 
 	/**
 	 * 发送Get请求
-	 * 
+	 *
 	 * @param url
 	 *            请求路径
 	 * @param paramMap
@@ -53,7 +53,7 @@ public class HttpClientUtils {
 
 	/**
 	 * 发送Get请求
-	 * 
+	 *
 	 * @param url
 	 *            请求路径
 	 * @param paramMap
@@ -92,7 +92,7 @@ public class HttpClientUtils {
 
 	/**
 	 * 发送Post请求
-	 * 
+	 *
 	 * @param url
 	 *            请求路径
 	 * @param paramMap
@@ -105,7 +105,7 @@ public class HttpClientUtils {
 
 	/**
 	 * 发送Post请求
-	 * 
+	 *
 	 * @param url
 	 *            请求路径
 	 * @param paramMap
@@ -143,7 +143,7 @@ public class HttpClientUtils {
 
 	/**
 	 * 发送Post请求
-	 * 
+	 *
 	 * @param url
 	 *            请求路径
 	 * @param paramMap
@@ -153,10 +153,10 @@ public class HttpClientUtils {
 	public static String getSendPut(String url, Map<String, String> paramMap) {
 		return getSendPut(url, paramMap, defaultEncode);
 	}
-	
+
 	/**
 	 * 发送Put请求
-	 * 
+	 *
 	 * @param url
 	 *            请求路径
 	 * @param paramMap
@@ -168,10 +168,10 @@ public class HttpClientUtils {
 	public static String getSendPut(String url, Map<String, String> paramMap, String encode) {
 		StringBuffer buf = new StringBuffer();
 		HttpClient client = new HttpClient();
-		
-		HttpClientParams clientParams = client.getParams();  
+
+		HttpClientParams clientParams = client.getParams();
 		clientParams.setContentCharset("UTF-8");
-		
+
 		PutMethod putMethod = new PutMethod(url);
 		if (paramMap.size() > 0) {
 			NameValuePair[] params = new NameValuePair[paramMap.size()];
@@ -196,10 +196,10 @@ public class HttpClientUtils {
 		}
 		return buf.toString();
 	}
-	
+
 	/**
 	 * 发送Delete请求
-	 * 
+	 *
 	 * @param url
 	 *            请求路径
 	 * @param paramMap
@@ -209,10 +209,10 @@ public class HttpClientUtils {
 	public static String getSendDelete(String url, Map<String, String> paramMap) {
 		return getSendDelete(url, paramMap, defaultEncode);
 	}
-	
+
 	/**
 	 * 发送Delete请求
-	 * 
+	 *
 	 * @param url
 	 *            请求路径
 	 * @param paramMap
@@ -224,10 +224,10 @@ public class HttpClientUtils {
 	public static String getSendDelete(String url, Map<String, String> paramMap, String encode) {
 		StringBuffer buf = new StringBuffer();
 		HttpClient client = new HttpClient();
-		
-		HttpClientParams clientParams = client.getParams();  
+
+		HttpClientParams clientParams = client.getParams();
 		clientParams.setContentCharset("UTF-8");
-		
+
 		DeleteMethod putMethod = new DeleteMethod(url);
 		if (paramMap.size() > 0) {
 			NameValuePair[] params = new NameValuePair[paramMap.size()];
@@ -252,11 +252,11 @@ public class HttpClientUtils {
 		}
 		return buf.toString();
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 	/**
 	 * HttpClient  上传文件
 	 * @param files
@@ -298,9 +298,9 @@ public class HttpClientUtils {
             postMethod.releaseConnection();
         }
     }
-    
-    
-    
+
+
+
     /**
      * base64上传文件
      * @return
@@ -337,14 +337,14 @@ public class HttpClientUtils {
 			return JSONObject.toJSONString(re);
 		}
     }
-    
-    
-    
- 
-	
-	
+
+
+
+
+
+
     /**
-     * 
+     *
         * @Title: getSendBody
         * @Description: TODO 直接 请求BODY
         * @param @param url
