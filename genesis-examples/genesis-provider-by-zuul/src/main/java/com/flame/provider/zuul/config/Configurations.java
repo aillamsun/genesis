@@ -1,5 +1,6 @@
 package com.flame.provider.zuul.config;
 
+import com.flame.provider.zuul.filters.AccessFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -19,8 +20,8 @@ public class Configurations {
 //    }
 
     @Bean
-    public SimpleFilter simpleFilter() {
-        return new SimpleFilter();
+    public AccessFilter accessFilter() {
+        return new AccessFilter();
     }
 
 }

@@ -19,8 +19,5 @@ public class GenesisProviderByZuulApp {
         SpringApplication.run(GenesisProviderByZuulApp.class, args);
     }
 
-    @Bean
-    public AccessFilter accessFilter() {
-        return new AccessFilter();
-    }
+
 }
