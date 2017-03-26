@@ -1,7 +1,11 @@
 package com.flame.provider.good;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
@@ -9,15 +13,21 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class GenesisGoodsProviderApp {
+@MapperScan("com.flame.provider.good.mapper")
+//使用@EnableCircuitBreaker注解开启断路器功能
+@EnableCircuitBreaker
+public class GenesisGoodsProviderApp extends SpringBootServletInitializer{
 
-    public static void main(String[] args) {
-        SpringApplication.run(GenesisGoodsProviderApp.class, args);
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(GenesisGoodsProviderApp.class);
     }
 
-    //程序首次启动调用
-    public void run(String... strings) throws Exception {
-        System.out.println("GenesisGoodsProviderApp Boot Successfully");
+
+    public static void main(String[] args) {
+        SpringApplication app = new SpringApplication(GenesisGoodsProviderApp.class);
+
+        app.run(args);
     }
 
 }
