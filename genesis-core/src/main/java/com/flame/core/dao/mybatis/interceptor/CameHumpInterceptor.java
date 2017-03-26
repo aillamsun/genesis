@@ -1,4 +1,4 @@
-package com.flame.core.mapper.interceptor;
+package com.flame.core.dao.mybatis.interceptor;
 
 import org.apache.ibatis.executor.resultset.ResultSetHandler;
 import org.apache.ibatis.plugin.*;

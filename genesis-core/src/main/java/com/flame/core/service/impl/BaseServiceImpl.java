@@ -1,18 +1,19 @@
 package com.flame.core.service.impl;
 
+import com.flame.core.dao.mybatis.BaseMapper;
 import com.flame.core.model.BaseModel;
 import com.flame.core.service.IService;
-import com.flame.plugin.spring.mybatis.config.BaseMapper;
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.entity.Condition;
 import tk.mybatis.mapper.entity.Example;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by sungang on 2016/10/21.
  */
-public abstract class BaseServiceImpl<T extends BaseModel> implements IService<T> {
+public abstract class BaseServiceImpl<T extends Serializable> implements IService<T> {
 
 //    @Autowired
     protected BaseMapper<T> mapper;

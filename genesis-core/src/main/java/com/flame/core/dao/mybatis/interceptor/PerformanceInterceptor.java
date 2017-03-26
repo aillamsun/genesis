@@ -1,4 +1,4 @@
-package com.flame.core.mapper.interceptor;
+package com.flame.core.dao.mybatis.interceptor;
 
 
 import org.apache.ibatis.executor.Executor;
@@ -12,7 +12,8 @@ import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.ResultHandler;
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.type.TypeHandlerRegistry;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -32,7 +33,9 @@ import java.util.Properties;
 public class PerformanceInterceptor implements Interceptor {
 
     private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    Logger log = Logger.getLogger(PerformanceInterceptor.class);
+
+
+    Logger log = LoggerFactory.getLogger(PerformanceInterceptor.class);
 
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
