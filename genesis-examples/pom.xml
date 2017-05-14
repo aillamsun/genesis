@@ -20,6 +20,7 @@
         <module>genesis-provider-order</module>
         <module>genesis-provider-goods2</module>
         <module>genesis-sleuth-zipkin-demo</module>
+        <module>genesis-provider-by-ribbon</module>
     </modules>
 
     <dependencies>
