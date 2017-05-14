@@ -21,7 +21,7 @@ import java.util.List;
 @FeignClient(name = "genesis-provider-goods", fallback = IGoodsService.HystrixClientFallback.class)
 public interface IGoodsService {
 
-    static final Logger LOGGER = LoggerFactory.getLogger(IGoodsService.class);
+    Logger LOGGER = LoggerFactory.getLogger(IGoodsService.class);
 
     /**
      * 添加商品
