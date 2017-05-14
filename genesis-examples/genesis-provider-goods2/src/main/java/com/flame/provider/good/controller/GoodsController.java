@@ -5,9 +5,12 @@ import com.flame.core.response.BaseResult;
 import com.flame.core.web.controller.BaseController;
 import com.flame.model.Goods;
 import com.flame.provider.good.service.GoodsService;
+import com.github.pagehelper.PageHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,6 +27,20 @@ public class GoodsController extends BaseController {
 
     @Autowired
     private GoodsService goodsService;
+
+    @Autowired
+    private DiscoveryClient discoveryClient;
+
+    /**
+     * 本地服务实例的信息
+     *
+     * @return
+     */
+    @GetMapping("/instance-info")
+    public ServiceInstance showInfo() {
+        ServiceInstance localServiceInstance = this.discoveryClient.getLocalServiceInstance();
+        return localServiceInstance;
+    }
 
     /**
      * 商品添加
@@ -52,7 +69,9 @@ public class GoodsController extends BaseController {
 
     @GetMapping
     public List<Goods> getGoods() {
+        PageHelper.startPage(1, 2);
         List<Goods> goodsList = goodsService.selectAll();
+        log.info("Result:{}", JSON.toJSONString(goodsList));
         return goodsList;
     }
 
