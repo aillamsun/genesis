@@ -19,22 +19,22 @@
 
     <dependencies>
 
-        <dependency>
-            <groupId>com.flame</groupId>
-            <artifactId>genesis-core</artifactId>
-            <version>${project.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.flame</groupId>-->
+            <!--<artifactId>genesis-core</artifactId>-->
+            <!--<version>${project.version}</version>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>com.flame</groupId>
             <artifactId>genesis-model</artifactId>
             <version>${project.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.flame</groupId>
-                    <artifactId>genesis-core</artifactId>
-                </exclusion>
-            </exclusions>
+            <!--<exclusions>-->
+                <!--<exclusion>-->
+                    <!--<groupId>com.flame</groupId>-->
+                    <!--<artifactId>genesis-core</artifactId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
         </dependency>
 
         <dependency>
