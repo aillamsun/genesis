@@ -17,6 +17,9 @@ import java.util.List;
 
 /**
  * Created by sungang on 2016/10/21.
+ * 1 不能使用@GetMapping 注解
+ * 2 使用 @PathVariable 必须加 value
+ * 3 暂时不支持复杂对象参数 可用map替代
  */
 @FeignClient(name = "genesis-provider-goods", fallback = IGoodsService.HystrixClientFallback.class)
 public interface IGoodsService {

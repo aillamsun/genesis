@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 /**
- * Created by sungang on 2016/10/24.
+ * Created by sungang on 2016/10/21.
+ * 1 不能使用@GetMapping 注解
+ * 2 使用 @PathVariable 必须加 value
+ * 3 暂时不支持复杂对象参数 可用map替代
  */
 @FeignClient(name = "genesis-provider-order")
 public interface IOrderService {
