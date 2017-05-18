@@ -1,4 +1,4 @@
-package com.flame.provider.order.mapper;
+package com.flame.mapper;
 
 import com.flame.core.dao.mybatis.BaseMapper;
 import com.flame.model.Order;

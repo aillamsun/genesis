@@ -1,4 +1,4 @@
-package com.flame.provider.good.mapper;
+package com.flame.mapper;
 
 import com.flame.core.dao.mybatis.BaseMapper;
 import com.flame.model.Goods;
