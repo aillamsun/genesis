@@ -21,6 +21,9 @@
         <module>genesis-microservices</module>
         <module>genesis-examples</module>
         <module>genesis-transaction-examples</module>
+        <module>genesis-generator</module>
+        <module>genesis-mapper</module>
+        <!--<module>genesisgenerator</module>-->
     </modules>
     <packaging>pom</packaging>
 
