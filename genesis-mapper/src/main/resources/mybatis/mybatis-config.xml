@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD SQL Map Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <setting name="cacheEnabled" value="true"/><!-- 全局映射器启用缓存 -->
+        <!--<setting name="useGeneratedKeys" value="true" />-->
+        <setting name="defaultExecutorType" value="REUSE"/>
+        <!-- 在null时也调用 setter,适应于返回Map,3.2版本以上可用 -->
+        <setting name="callSettersOnNulls" value="true" />
+    </settings>
+
+    <typeAliases>
+    </typeAliases>
+
+    <plugins>
+    <!--性能分析拦截器主要输出Sql以及Sql执行的时间，该拦截器会损失一定的整体性能，所以建议在测试环境使用，正式环境不建议使用。-->
+    <!--另外，如果配置了多个拦截器，那么一定要把这个拦截器配置在第一个，否则其他需要修改Sql的拦截器会对该拦截器获取Sql部分产生影响。-->
+    <!--建议根据个人需求对该拦截器进行修改-->
+        <plugin interceptor="com.chinawiserv.core.dao.mybatis.interceptor.PerformanceInterceptor"/>
+    <!--返回值Map结果的Key转为驼峰式  例如返回结果中Map的{REAL_NAME:jack}会转换为{realName:jack}-->
+        <!--<plugin interceptor="com.chinawiserv.core.dao.mybatis.interceptor.CameHumpInterceptor"/>-->
+    </plugins>
+</configuration>

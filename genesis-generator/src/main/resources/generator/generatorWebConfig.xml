@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <!-- 具体配置内容 -->
+    <properties resource="config.properties"/>
+
+    <!-- 如果你希望不生成和Example查询有关的内容，那么可以按照如下进行配置: -->
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="${mapper.plugin}">
+            <property name="mappers" value="${mapper.Mapper}"/>
+        </plugin>
+
+        <jdbcConnection driverClass="${jdbc.driverClass}" connectionURL="${jdbc.url}" userId="${jdbc.user}" password="${jdbc.password}">
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="com.chinawiserv.model" targetProject="${targetJavaProject}" >
+            <property name="rootClass" value="com.chinawiserv.core.model.BaseModel"></property>
+            <property name="trimStrings" value="true"></property>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapper"  targetProject="${targetResourcesProject}"/>
+
+        <javaClientGenerator targetPackage="com.chinawiserv.mapper" targetProject="${targetJavaProject}" type="XMLMAPPER" />
+
+        <table tableName="%" >
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+    </context>
+
+
+</generatorConfiguration>
