@@ -14,7 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-@MapperScan("com.flame.provider.good.mapper")
+@MapperScan("com.flame.mapper")
 //使用@EnableCircuitBreaker注解开启断路器功能
 @EnableCircuitBreaker
 public class GenesisGoodsProviderApp extends SpringBootServletInitializer{
