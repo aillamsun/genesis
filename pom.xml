@@ -20,6 +20,7 @@
         <module>genesis-spring</module>
         <module>genesis-microservices</module>
         <module>genesis-examples</module>
+        <module>genesis-transaction-examples</module>
     </modules>
     <packaging>pom</packaging>
 
