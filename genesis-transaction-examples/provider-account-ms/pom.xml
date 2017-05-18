@@ -21,14 +21,8 @@
 
         <dependency>
             <groupId>com.flame</groupId>
-            <artifactId>genesis-model</artifactId>
+            <artifactId>genesis-mapper</artifactId>
             <version>${project.version}</version>
-            <!--<exclusions>-->
-            <!--<exclusion>-->
-            <!--<groupId>com.flame</groupId>-->
-            <!--<artifactId>genesis-core</artifactId>-->
-            <!--</exclusion>-->
-            <!--</exclusions>-->
         </dependency>
 
         <dependency>
