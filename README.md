@@ -52,6 +52,8 @@ genesis 是一个基于Spring cloud(Camden.SR1) Spring Boot(1.4.1.RELEASE) Mybat
 | genesis-sleuth-zipkin-demo              | 8093 | sleuth-zipkin-demo 接口              | 无            |
 ------
 #### 5. 分布式事务Example(更新中....)(genesis-transaction-examples) 提供分布式事务功能实现        |
+| 项目名称                                     | 端口   | 描述                     | URL             |
+| ---------------------------------------- | ---- | ---------------------- | --------------- |
 | gprovider-account-ms               | 8085 | 账号服务提供者            | 无            |
 | provider-order-ms              | 8086 | 订单服务提供者          | 无            |
 
