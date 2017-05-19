@@ -11,6 +11,9 @@ genesis 是一个基于Spring cloud(Camden.SR1) Spring Boot(1.4.1.RELEASE) Mybat
 | genesis-common                | 无 | 公共模块（工具类,资源......）            | 无            |
 | genesis-core               | 无 | 核心代码               | 无            |
 | genesis-model               | 无 | 公共实体对象      
+| spar_generator              | 无 | 生成mybatis mapper model实体      
+| spar_mapper               | 无 | 抽离的mapper mapper.xml     
+------
 #### 2. Spring Cloud(genesis-microservices)组件说明
 | 项目名称                                     | 端口   | 描述                     | URL             |
 | ---------------------------------------- | ---- | ---------------------- | --------------- |
@@ -28,15 +31,14 @@ genesis 是一个基于Spring cloud(Camden.SR1) Spring Boot(1.4.1.RELEASE) Mybat
 | genesis-microservices-zipkin               | 8091 |Zipkin Server 对Spring Cloud应用进行服务追踪分析(主要和Sleuth)    | 无            |
 | genesis-microservices-bus-kafka               | 无 |bus-kafka    | 无            |
 | genesis-microservices-bus-amqp                | 无 |bus-amqp    | 无            |
-
-
-
+------
 #### 3. Spring(genessis-spring)扩展组件说明
 | 项目名称                                     | 端口   | 描述                     | URL             |
 | ---------------------------------------- | ---- | ---------------------- | --------------- |
 | genesis-spring-extends                | 无 | Spring 扩展(更新中...)            | 无            |
 | genesis-spring-plugins              | 无 | Spring 插件(更新中...)               | 无            |
 | genesis-spring-plugins-mybatis             | 无 | Spring boot mybatis stater自定义(在genesis-provider-goods使用测试)             | 无            |
+------
 #### 4. Examples(genesis-examples) 提供真是服务使用
 | 项目名称                                     | 端口   | 描述                     | URL             |
 | ---------------------------------------- | ---- | ---------------------- | --------------- |
@@ -48,6 +50,11 @@ genesis 是一个基于Spring cloud(Camden.SR1) Spring Boot(1.4.1.RELEASE) Mybat
 | genesis-provider-goods2              | 8082 | Goods服务提供者(用于启动测试 API goods模块Feign Client负载均衡)              | 无            
 | genesis-provider-order              | 8083 | Order服务提供者              | 无            |
 | genesis-sleuth-zipkin-demo              | 8093 | sleuth-zipkin-demo 接口              | 无            |
+------
+#### 5. 分布式事务Example(更新中....)(genesis-transaction-examples) 提供分布式事务功能实现        |
+| gprovider-account-ms               | 8085 | 账号服务提供者            | 无            |
+| provider-order-ms              | 8086 | 订单服务提供者          | 无            |
+
 
 ## 架构图(目前待完善)
 
