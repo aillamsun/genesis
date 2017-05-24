@@ -17,14 +17,12 @@
         <module>genesis-microservices-discovery</module>
         <module>genesis-microservices-gateway</module>
         <module>genesis-microservices-monitor</module>
-        <module>genesis-microservices-discovery2</module>
         <module>genesis-microservices-config-client</module>
         <module>genesis-microservices-zipkin</module>
         <module>genesis-microservices-sleuth</module>
         <module>genesis-microservices-bus-kafka</module>
         <module>genesis-microservices-bus-amqp</module>
         <module>genesis-microservices-security</module>
-        <module>genesis-microservices-discovery3</module>
         <module>genesis-microservices-hystrix-dashboard</module>
         <module>genesis-microservices-hystrix-turbine</module>
         <module>genesis-microservices-discovery-consul</module>
