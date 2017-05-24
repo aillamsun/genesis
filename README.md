@@ -17,9 +17,7 @@ genesis 是一个基于Spring cloud(Camden.SR1) Spring Boot(1.4.1.RELEASE) Mybat
 #### 2. Spring Cloud(genesis-microservices)组件说明
 | 项目名称                                     | 端口   | 描述                     | URL             |
 | ---------------------------------------- | ---- | ---------------------- | --------------- |
-| genesis-microservices-discovery               | 8761 | 服务注册中心(用作和8762 8763实现高可用注册中心)            | 无            |
-| genesis-microservices-discovery2              | 8762 | 服务注册中心2(用作和8761 8763实现高可用注册中心)            | 无            |
-| genesis-microservices-discovery3              | 8763 | 服务注册中心3(用作和8761 8762实现高可用注册中心)            | 无            |
+| genesis-microservices-discovery               | 8761 8762 8763 | 服务注册中心(用作和8762 8763实现高可用注册中心)            | 无            |
 | genesis-microservices-config               | 8040 | 服务配置中心服务          | 无            |
 | genesis-microservices-config-client               | 8041 | 服务配置客户端测试启动访问(ip:port/message打印)            | 无            |
 | genesis-microservices-gateway               | 8050 | 服务网关    | 无            |
