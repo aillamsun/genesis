@@ -163,6 +163,7 @@ java -jar discovery-1.0.0.jar
 
 访问http://localhost:8051
 输入框输入：http://localhost:8052/turbine.stream 
+分别访问 feign ribbon 
 #### 效果图1
 ![效果图1](http://i4.buimg.com/1949/38ae38087f6ff6cd.jpg)
 确认：
