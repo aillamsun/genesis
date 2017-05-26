@@ -26,4 +26,10 @@ public class GoodsController {
     public List<Goods> findAll() {
         return this.goodsService.findAll();
     }
+
+
+    @GetMapping("{id}")
+    public Goods findById(@PathVariable Long id) {
+        return this.goodsService.findById(id);
+    }
 }

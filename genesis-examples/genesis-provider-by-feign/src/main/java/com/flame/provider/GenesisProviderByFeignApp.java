@@ -7,6 +7,7 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 
 /**
  * Created by sungang on 2016/10/21.
@@ -19,7 +20,7 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 //@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 //hystrix 监控
 @EnableCircuitBreaker
-public class GenesisProviderByFeignApp extends SpringBootServletInitializer{
+ public class GenesisProviderByFeignApp extends SpringBootServletInitializer{
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {

@@ -35,6 +35,12 @@ public class GoodsService {
         return this.restTemplate.getForObject("http://genesis-provider-goods/goods", List.class);
     }
 
+    @HystrixCommand(fallbackMethod = "fallbackfindById")
+    public Goods findById(Long id) {
+        // http://服务提供者的serviceId/url
+        return this.restTemplate.getForObject("http://genesis-provider-goods/goods/" + id, Goods.class);
+    }
+
 
     /**
      * hystrix fallbackFindAll 方法
@@ -50,6 +56,20 @@ public class GoodsService {
         List<Goods> goodss = Lists.newArrayList();
         goodss.add(goods);
         return goodss;
+    }
+
+    /**
+     * hystrix fallbackFindAll 方法
+     *
+     */
+    public Goods fallbackfindById(Long id) {
+        GoodsService.LOGGER.info("异常发生，进入 fallbackfindById 方法");
+        Goods goods = new Goods();
+        goods.setId(id);
+        goods.setGoodsName("defaul good name");
+        goods.setCreateTime(new Date());
+        goods.setStock(-1);
+        return goods;
     }
 
 }
