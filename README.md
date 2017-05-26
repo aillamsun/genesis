@@ -136,8 +136,8 @@ java -jar discovery-1.0.0.jar
 
 访问 http://localhost:8060 admin UI
 访问 http://localhost:8081/goods
-
 #### 效果图
+
 -----
 #### Hystrix-dashboard 监控
 > * 数据库脚本 genesis-common-config resources/db/下面spring-cloud-test.sql
@@ -145,10 +145,11 @@ java -jar discovery-1.0.0.jar
 > * 启动genesis-microservices-hystrix-dashboard 端口 8051
 > * 启动genesis-provider-by-feign 端口8080
 
-访问 http://localhost:8051  在地址栏输入:http://localhost:8080/hystrix.stream
-
+访问 http://localhost:8051 
+在地址栏输入:http://localhost:8080/hystrix.stream
 
 #### 效果图
+![效果图](http://i4.buimg.com/1949/0b6e7467b99a1e00.jpg)
 
 -----
 #### Hystrix Turbine 监控
@@ -167,10 +168,6 @@ java -jar discovery-1.0.0.jar
 确认：
 #### 效果图2
 ![效果图2](http://i4.buimg.com/1949/d4bc21c6f96033b3.jpg)
-
-
-
-#### Hystrix Turbine 监控
 
 
 ## 服务跟踪监控Zipkin、Sleuth 测试
