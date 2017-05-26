@@ -65,9 +65,7 @@ genesis 是一个基于Spring cloud(Camden.SR1) Spring Boot(1.4.1.RELEASE) Mybat
 ## 服务中心HA说明
 | 项目名称                                     | 端口   | 描述                     | URL             |
 | ---------------------------------------- | ---- | ---------------------- | --------------- |
-| genesis-microservices-discovery               | 8761 | 服务注册中心(用作和8762 8763实现高可用注册中心)            | 无            |
-| genesis-microservices-discovery2              | 8762 | 服务注册中心2(用作和8761 8763实现高可用注册中心)            | 无            |
-| genesis-microservices-discovery3              | 8763 | 服务注册中心3(用作和8761 8762实现高可用注册中心)            | 无            |
+| genesis-microservices-discovery               | 8761  8762 8763| 服务注册中心)            | 无            |
 
 > * 1,（C:\Windows\System32\drivers\etc\hosts文件）
 ```java
@@ -83,57 +81,47 @@ genesis 是一个基于Spring cloud(Camden.SR1) Spring Boot(1.4.1.RELEASE) Mybat
 
 
 
-#### application-discovery1.properties
+#### application-chengdu-1.properties
 ```java
 spring.application.name=eureka-server-clustered
 server.port=8761
 eureka.instance.hostname=discovery1
-eureka.client.serviceUrl.defaultZone=http://discovery2:8762/eureka/,http://discovery3:8763/eureka/
+eureka.client.serviceUrl.defaultZone=http://${security.user.name}:${security.user.password}@discovery2:8762/eureka/,http://${security.user.name}:${security.user.password}@discovery3:8763/eureka/
 ```
 
-#### application-discovery2.properties
+#### application-chengdu-2.properties
 ```java
 spring.application.name=eureka-server-clustered
 server.port=8762
 eureka.instance.hostname=discovery2
-eureka.client.serviceUrl.defaultZone=http://discovery1:8761/eureka/,http://discovery3:8763/eureka/
+eureka.client.serviceUrl.defaultZone=http://${security.user.name}:${security.user.password}@discovery1:8761/eureka/,http://${security.user.name}:${security.user.password}@discovery3:8763/eureka/
 ```
 
-#### application-discovery3.properties
+#### application-chengdu-3.properties
 ```java
 spring.application.name=eureka-server-clustered
 server.port=8763
 eureka.instance.hostname=discovery3
-eureka.client.serviceUrl.defaultZone=http://discovery1:8761/eureka/,http://discovery2:8762/eureka/
+eureka.client.serviceUrl.defaultZone=http://${security.user.name}:${security.user.password}@discovery1:8761/eureka/,http://${security.user.name}:${security.user.password}@discovery2:8762/eureka/
 ```
 
 ### 命令启动格式1：
 ```java
-java -jar discovery1-1.0.0.jar  --spring.profiles.active=discovery1
-java -jar discovery2-1.0.0.jar --spring.profiles.active=discovery2
-java -jar discovery3-1.0.0.jar --spring.profiles.active=discovery3
+java -jar discovery-1.0.0.jar  --spring.profiles.active=chengdu-1
+java -jar discovery-1.0.0.jar --spring.profiles.active=chengdu-2
+java -jar discovery-1.0.0.jar --spring.profiles.active=chengdu-3
 ```
-### 命令启动格式2：
 
-#### 添加文件 application.properties
-```java
-spring.profiles.active=discovery1
-或者
-spring.profiles.active=discovery2
-```
+
 命令修改为：
 ```java
-java -jar discovery1-1.0.0.jar
+java -jar discovery-1.0.0.jar
 ```
 	
 ### 效果图:
 
 ### [访问discovery1](http://discovery1:8761)
-![discovery1](http://p1.bpimg.com/1949/1f7f7b2967a8efd3.png)
-### [访问discovery2](http://discovery2:8762)
-![discovery2](http://p1.bpimg.com/1949/ecacb2a6b1ddbc12.png)
-### [访问discovery3](http://discovery3:8763)
-![discovery3](http://p1.bpimg.com/1949/8d08a1bd40c7ea48.png)
+![discovery1](http://i4.buimg.com/1949/c1c8bed93bd1e784.jpg)
 	
 
 ## 监控视图测试
