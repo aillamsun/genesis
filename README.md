@@ -129,55 +129,65 @@ java -jar discovery-1.0.0.jar
 ### 使用说明：
 
 
-#### 1,Spring boot Admin 监控
+#### Spring boot Admin 监控
 > * 数据库脚本 genesis-common-config resources/db/下面spring-cloud-test.sql
 > * 首先启动：genesis-microservices-monitor 端口 8060
 > * 启动 genesis-provider-goods 端口 8081
 
 访问 http://localhost:8060 admin UI
-
 访问 http://localhost:8081/goods
 
-
-#### 1.2,效果图
+#### 效果图
 -----
-#### 2,Hystrix-dashboard 监控
+#### Hystrix-dashboard 监控
 > * 数据库脚本 genesis-common-config resources/db/下面spring-cloud-test.sql
-> * 首先启动：genesis-microservices-discovery 和 genesis-microservices-discovery2、genesis-microservices-discovery3
+> * 首先启动：genesis-microservices-discovery
 > * 启动genesis-microservices-hystrix-dashboard 端口 8051
 > * 启动genesis-provider-by-feign 端口8080
 
 访问 http://localhost:8051  在地址栏输入:http://localhost:8080/hystrix.stream
 
 
-#### 2.2,效果图
+#### 效果图
 
 -----
-#### 3,Hystrix Turbine 监控
+#### Hystrix Turbine 监控
 > * 数据库脚本 genesis-common-config resources/db/下面spring-cloud-test.sql
-> * 首先启动：genesis-microservices-discovery 和 genesis-microservices-discovery2、genesis-microservices-discovery3
+> * 首先启动：genesis-microservices-discovery
+> * genesis-provider-goods,genesis-provider-order
+> * genesis-provider-by-feign,genesis-provider-by-ribbon
+> * genesis-microservices-hystrix-dashboard 端口 8051
 > * 启动genesis-microservices-hystrix-turbine 端口 8052
 > * 分别启动 genesis-provider-goods 端口8081 、genesis-provider-order 端口 8083
 
-访问http://localhost:8052
+访问http://localhost:8051
+输入框输入：http://localhost:8052/turbine.stream 
+#### 效果图1
+![效果图1](http://i4.buimg.com/1949/38ae38087f6ff6cd.jpg)
+确认：
+#### 效果图2
+![效果图2](http://i4.buimg.com/1949/d4bc21c6f96033b3.jpg)
 
-#### 3.2,效果图
+
+
+#### Hystrix Turbine 监控
+
 
 ## 服务跟踪监控Zipkin、Sleuth 测试
 
 ### 使用说明：
 
-#### 1,项目启动
+#### 项目启动
 > * 启动 Zipkin Server 服务 genesis-microservices-zipkin 端口 8091
 > * 启动 Zipkin Server 服务demo  genesis-microservices-sleuth 端口 8092
 > * 启动测试 Zipkin、Sleuth 服务提供者  genesis-sleuth-zipkin-demo 端口 8093
 > * 直接调用 8092 Controller接口即可
 
-#### 2,跟踪列表效果图
+#### 跟踪列表效果图
 
 ![跟踪列表](http://i1.piimg.com/1949/09934fc78dda3bf6.png)
 
-#### 2,跟踪详细信息效果图
+#### 跟踪详细信息效果图
 
 ![跟踪详细信息](http://i1.piimg.com/1949/e11be74f0f7615e6.png)
 
@@ -187,7 +197,7 @@ java -jar discovery-1.0.0.jar
 
 #### 1,项目启动：
 > * 数据库脚本 genesis-common-config resources/db/下面spring-cloud-test.sql
-> * 首先启动：genesis-microservices-discovery 和 genesis-microservices-discovery2、genesis-microservices-discovery3
+> * 首先启动：genesis-microservices-discovery
 > * 测试Fegin可以启动genesis-provider-by-feign。前提启动genesis-provider-good、genesis-provider-order
 > * 测试Zuul可以启动genesis-provider-by-zuul 。前提启动genesis-provider-good、genesis-provider-order
 > * genesis-provider-by-feign提供swgger UI 通过API文档Try 就可以了
