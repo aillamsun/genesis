@@ -168,7 +168,7 @@ java -jar discovery-1.0.0.jar
 ![效果图1](http://i4.buimg.com/1949/38ae38087f6ff6cd.jpg)
 确认：
 #### 效果图2
-![效果图2](http://i4.buimg.com/1949/d4bc21c6f96033b3t.jpg)
+![效果图2](http://i4.buimg.com/1949/d4bc21c6f96033b3.jpg)
 
 
 ## 服务跟踪监控Zipkin、Sleuth 测试
