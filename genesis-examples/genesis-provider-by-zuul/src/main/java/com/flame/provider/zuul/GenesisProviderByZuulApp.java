@@ -1,10 +1,10 @@
 package com.flame.provider.zuul;
 
-import com.flame.provider.zuul.filters.AccessFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
+import org.springframework.cloud.netflix.zuul.filters.discovery.PatternServiceRouteMapper;
 import org.springframework.context.annotation.Bean;
 
 /**
@@ -20,4 +20,18 @@ public class GenesisProviderByZuulApp {
     }
 
 
+    /**
+     * 正则 匹配路由 规则
+     *
+     * genesis-provider-goods-v1
+     *
+     * 请求方式 zuul:port/v1/genesis-provider-goods/**
+     *
+     *
+     * @return
+     */
+    @Bean
+    public PatternServiceRouteMapper serviceRouteMapper() {
+        return new PatternServiceRouteMapper("(?<name>^.+)-(?<version>v.+$)", "${version}/${name}");
+    }
 }

@@ -43,27 +43,10 @@ hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds=10000
 
 # 要忽视的服务
 # zuul.ignored-services=
+
 # 设置 请求前缀
 zuul.prefix=/api
-zuul.strip-prefix=true
-
-# routes to serviceId
-zuul.routes.good_api.path=/good_api/**
-#demo goods Eureka的服务id(小写)
-zuul.routes.good_api.serviceId=genesis-provider-goods
-zuul.routes.good_api.sensitiveHeaders=Cookie,Set-Cookie,Authorization
-# order
-zuul.routes.order_api.path=/order_api/**
-zuul.routes.order_api.serviceId=genesis-provider-order
-
-#
-zuul.routes.static.path=/static/**
+zuul.strip-prefix=false
 
 
 
-# 其他路由 策略
-# zuul.routes.legacy.path = /**
-
-
-#ribbon.eureka.enabled = false
-#genesis-provider-goods.ribbon.listOfServers=

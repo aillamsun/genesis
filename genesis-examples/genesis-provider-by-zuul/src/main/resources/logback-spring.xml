@@ -16,7 +16,7 @@
 	<logger name="com.netflix.eureka" level="INFO"/>
 	<logger name="com.flame" level="DEBUG"/>
 
-	<root level="${log.level}">
+	<root level="INFO">
 		<!-- appender referenced after it is defined -->
 		<appender-ref ref="STDOUT"/>
 	</root>
