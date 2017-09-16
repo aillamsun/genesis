@@ -15,6 +15,7 @@
 
 
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka-server</artifactId>
@@ -25,6 +26,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+
     </dependencies>
 
     <properties>
@@ -35,30 +37,31 @@
     <build>
 
         <plugins>
-            <!--<plugin>
+            <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>${docker.plugin.version}</version>
+                <version>${spotify.version}</version>
                 <executions>
                     <execution>
+                        <id>build-image</id>
                         <phase>package</phase>
                         <goals>
                             <goal>build</goal>
                         </goals>
+                        <configuration>
+                            <imageName>${registry.host}:${registry.port}/${project.artifactId}</imageName>
+                            <dockerDirectory>${project.basedir}/docker</dockerDirectory>
+                            <resources>
+                                <resource>
+                                    <targetPath>/</targetPath>
+                                    <directory>${project.build.directory}</directory>
+                                    <include>${project.build.finalName}.jar</include>
+                                </resource>
+                            </resources>
+                        </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-                    <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
-                    <resources>
-                        <resource>
-                            <targetPath>/</targetPath>
-                            <directory>${project.build.directory}</directory>
-                            <include>${project.build.finalName}.jar</include>
-                        </resource>
-                    </resources>
-                </configuration>
-            </plugin>-->
+            </plugin>
 
         </plugins>
 

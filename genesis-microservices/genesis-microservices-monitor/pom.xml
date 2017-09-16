@@ -13,18 +13,67 @@
     <name>genesis-microservices-monitor</name>
     <url>http://maven.apache.org</url>
 
+    <properties>
+        <spring-boot-admin.version>1.5.0</spring-boot-admin.version>
+    </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+
         <!-- Spring Boot Admin Server -->
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-server</artifactId>
-            <version>1.3.2</version>
+            <version>${spring-boot-admin.version}</version>
         </dependency>
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-server-ui</artifactId>
-            <version>1.3.2</version>
+            <version>${spring-boot-admin.version}</version>
         </dependency>
     </dependencies>
+
+
+    <build>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+
+        <plugins>
+            <!--<plugin>-->
+                <!--<groupId>com.spotify</groupId>-->
+                <!--<artifactId>docker-maven-plugin</artifactId>-->
+                <!--<version>${spotify.version}</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>build-image</id>-->
+                        <!--<phase>package</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>build</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<imageName>${registry.host}:${registry.port}/${project.artifactId}</imageName>-->
+                            <!--<dockerDirectory>${project.basedir}/docker</dockerDirectory>-->
+                            <!--<resources>-->
+                                <!--<resource>-->
+                                    <!--<targetPath>/</targetPath>-->
+                                    <!--<directory>${project.build.directory}</directory>-->
+                                    <!--<include>${project.build.finalName}.jar</include>-->
+                                <!--</resource>-->
+                            <!--</resources>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
+        </plugins>
+    </build>
 </project>

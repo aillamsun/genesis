@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Created by sungang on 2016/10/21.
  */
 @SpringBootApplication
-//
 @EnableEurekaServer
 public class GenesisServerApp {
 
     public static void main(String[] args) throws Exception {
         new SpringApplicationBuilder(GenesisServerApp.class).web(true).run(args);
     }
+
     //程序首次启动调用
     public void run(String... strings) throws Exception {
         System.out.println("Genesis Server Boot Successfully");

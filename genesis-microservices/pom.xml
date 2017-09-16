@@ -26,6 +26,7 @@
         <module>genesis-microservices-hystrix-dashboard</module>
         <module>genesis-microservices-hystrix-turbine</module>
         <module>genesis-microservices-discovery-consul</module>
+        <module>genesis-microservices-oauth2</module>
     </modules>
 
 </project>

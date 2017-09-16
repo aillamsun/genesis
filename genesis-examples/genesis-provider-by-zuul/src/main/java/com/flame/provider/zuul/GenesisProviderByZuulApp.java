@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Bean;
  * Created by sungang on 2016/12/20.
  */
 @SpringBootApplication
-@EnableDiscoveryClient
 @EnableZuulProxy
 public class GenesisProviderByZuulApp {
 

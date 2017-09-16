@@ -33,6 +33,9 @@
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spotify.version>0.4.13</spotify.version>
+        <registry.host>192.168.1.88</registry.host>
+        <registry.port>5000</registry.port>
 
         <junit.version>4.11</junit.version>
 
