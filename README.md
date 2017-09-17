@@ -49,11 +49,12 @@ genesis 是一个基于Spring cloud(Camden.SR1) Spring Boot(1.4.1.RELEASE) Mybat
 | genesis-provider-order              | 8083 | Order服务提供者              | 无            |
 | genesis-sleuth-zipkin-demo              | 8093 | sleuth-zipkin-demo 接口              | 无            |
 ------
-#### 5. 分布式事务Example(更新中....)(genesis-transaction-examples) 提供分布式事务功能实现        |
+#### 5. 分布式事务Example(更新中....)(genesis-transaction-examples) 提供LCN分布式事务功能实现        |
 | 项目名称                                     | 端口   | 描述                     | URL             |
 | ---------------------------------------- | ---- | ---------------------- | --------------- |
-| gprovider-account-ms               | 8085 | 账号服务提供者            | 无            |
-| provider-order-ms              | 8086 | 订单服务提供者          | 无            |
+| tx-manager              | 8010 | 事务管理            | 无            |
+| tx-user-ms              | 8011 | 用户服务          | 无            |
+| tx-userMoney-ms             | 1012 | 用户金钱管理服务          | 无            |
 
 
 ## 架构图(目前待完善)
@@ -213,5 +214,74 @@ java -jar discovery-1.0.0.jar
 ![api-demo](http://p1.bqimg.com/1949/6721d590be673013.png)
 
 
-## 分布式事务测试(暂时没开发，后续更新...)
+## 分布式事务基于Spring Cloud + LCN
+
+### LCN 
+    首先感谢LCN提供
+[LCN](https://github.com/1991wangliang/tx-lcn)
+
+### 使用说明：
+    
+#### 1,项目启动：
+
+> * 首先启动 tx-manager
+[tx-manager](http://localhost:8100/index)
+
+效果图
+![manager](http://i1.bvimg.com/607995/10d7b69bf61f4e10.jpg)
+
+> * 启动 tx-user-ms 和 tx-user-money-ms
+
+#### 测试
+
+> * 访问 http://localhost:8011/user/save
+
+Controller  
+
+```java
+@RequestMapping(value = "/save",method = RequestMethod.POST)
+    public int save() {
+        return userService.save();
+    }
+```
+
+
+Service
+
+```java
+@TxTransaction
+    @Transactional
+    public int save() {
+
+        TUser user = new TUser();
+        user.setUsername("Test Tx");
+        user.setPwd("1");
+        user.setAge(20);
+        int rs1 = userMapper.insert(user);
+        /**
+         * 保存 余额 分布式服务
+         */
+        int rs2 = userMoneyClient.save();
+
+        /**
+         * 抛出异常
+         */
+        int v = 100 / 0;
+        return rs1 + rs2;
+    }
+```
+
+
+UserMoneyClient
+
+```java
+@FeignClient(name = "genesis-tx-user-money-ms", configuration = TransactionRestTemplateConfiguration.class)
+public interface UserMoneyClient {
+
+    @RequestMapping(value = "/user-money/save",method = RequestMethod.POST)
+    int save();
+}
+```
+    
+
 

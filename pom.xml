@@ -139,6 +139,11 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>-->
+
+        <repository>
+            <id>lorne</id>
+            <url>https://1991wangliang.github.io/repository</url>
+        </repository>
     </repositories>
 
 
@@ -205,6 +210,9 @@
             <artifactId>commons-codec</artifactId>
             <version>${apache.common.codec.version}</version>
         </dependency>
+
+
+
 
     </dependencies>
 
