@@ -201,9 +201,6 @@ java -jar discovery-1.0.0.jar
 > * 测试Zuul可以启动genesis-provider-by-zuul 。前提启动genesis-provider-good、genesis-provider-order
 > * genesis-provider-by-feign提供swgger UI 通过API文档Try 就可以了
 
-#### 2, 服务注册展示：
-![Markdown](http://i1.piimg.com/1949/fb0fc9336867151c.png)
-
 
 ## API 文档访问测试
 
