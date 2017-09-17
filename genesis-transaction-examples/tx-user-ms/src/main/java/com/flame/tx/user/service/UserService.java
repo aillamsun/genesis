@@ -39,6 +39,7 @@ public class UserService {
 
         User user = new User();
         user.setUserName("Test Tx");
+        user.setPassword("11111");
         int rs1 = userMapper.insert(user);
         /**
          * 保存 余额 分布式服务
