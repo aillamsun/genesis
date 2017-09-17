@@ -184,11 +184,11 @@ java -jar discovery-1.0.0.jar
 
 #### 跟踪列表效果图
 
-![跟踪列表](http://i1.piimg.com/1949/09934fc78dda3bf6.png)
+![跟踪列表](http://i2.bvimg.com/607995/82d1855764e4fed3.jpg)
 
 #### 跟踪详细信息效果图
 
-![跟踪详细信息](http://i1.piimg.com/1949/e11be74f0f7615e6.png)
+![跟踪详细信息](http://i2.bvimg.com/607995/8b46328a334c1aef.jpg)
 
 ## Zuul 和 Feign 测试
 
