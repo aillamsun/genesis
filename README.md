@@ -211,7 +211,7 @@ java -jar discovery-1.0.0.jar
 
 #### 1,项目启动：
 > * 启动API genesis-provider-by-feign访问http://localhost:8080/swagger-ui.html
-![api-demo](http://p1.bqimg.com/1949/6721d590be673013.png)
+![Markdown](http://i2.bvimg.com/607995/7d2dd1afb7ee0104.jpg)
 
 
 ## 分布式事务基于Spring Cloud + LCN
