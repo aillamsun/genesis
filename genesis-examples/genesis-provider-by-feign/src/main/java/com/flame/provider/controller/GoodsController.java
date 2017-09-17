@@ -11,6 +11,8 @@ import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -28,6 +30,22 @@ public class GoodsController extends BaseController {
 
     @Autowired
     private IGoodsService goodsService;
+
+
+    @Autowired
+    private LoadBalancerClient loadBalancerClient;
+
+
+    /**
+     * 测试查看 路由规则结果
+     * @return
+     */
+    @GetMapping("serviceInstance")
+    public String testGet() {
+        ServiceInstance serviceInstance = loadBalancerClient.choose("genesis-provider-goods");
+        System.out.println(serviceInstance);
+        return serviceInstance.getHost() + ":" + serviceInstance.getPort() + ":" + serviceInstance.getServiceId();
+    }
 
     /**
      * 商品添加

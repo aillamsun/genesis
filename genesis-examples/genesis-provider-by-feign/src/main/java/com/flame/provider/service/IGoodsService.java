@@ -1,5 +1,6 @@
 package com.flame.provider.service;
 
+import com.flame.config.CConfiguration;
 import com.flame.core.response.BaseResult;
 import com.flame.model.Goods;
 import com.google.common.collect.Lists;
@@ -17,10 +18,10 @@ import java.util.List;
 /**
  * Created by sungang on 2016/10/21.
  * 1 不能使用@GetMapping 注解
- * 2 使用 @PathVariable 必须加 value
+ * 2 使用 @PathVariable 必须加 value属性
  * 3 暂时不支持复杂对象参数 可用map替代
  */
-@FeignClient(name = "genesis-provider-goods", fallback = IGoodsServiceFallback.class)
+@FeignClient(name = "genesis-provider-goods", configuration = CConfiguration.class, fallback = IGoodsServiceFallback.class)
 public interface IGoodsService {
 
     Logger LOGGER = LoggerFactory.getLogger(IGoodsService.class);
@@ -70,7 +71,6 @@ public interface IGoodsService {
      */
     @RequestMapping(value = "/goods/{goods_id}", method = RequestMethod.PUT)
     BaseResult updateById(@PathVariable("goods_id") Long goods_id, @RequestBody Goods goods);
-
 
 
 }
