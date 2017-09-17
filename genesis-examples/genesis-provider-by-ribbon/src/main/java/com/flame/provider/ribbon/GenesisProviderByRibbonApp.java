@@ -24,13 +24,13 @@ import org.springframework.web.client.RestTemplate;
  *
  *  多个RibbonClient
  */
-@RibbonClient(name = "genesis-provider-goods", configuration = TestConfiguration.class)
+//@RibbonClient(name = "genesis-provider-goods", configuration = RuleConfiguration.class)
 /**
  *
  */
-@ComponentScan(excludeFilters = {
-        @ComponentScan.Filter(type = FilterType.ANNOTATION,value = ExcludeFromComponentScan.class)
-})
+//@ComponentScan(excludeFilters = {
+//        @ComponentScan.Filter(type = FilterType.ANNOTATION,value = ExcludeFromComponentScan.class)
+//})
 public class GenesisProviderByRibbonApp {
 
     public static void main(String[] args) {

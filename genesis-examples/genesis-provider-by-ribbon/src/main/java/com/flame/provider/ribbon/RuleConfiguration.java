@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ExcludeFromComponentScan
-public class TestConfiguration {
+public class RuleConfiguration {
 
 
 //    @Autowired
@@ -27,10 +27,10 @@ public class TestConfiguration {
      *
      * @return
      */
-    @Bean
-    public IRule ribbonRule() {
-        return new RandomRule();
-    }
+//    @Bean
+//    public IRule ribbonRule() {
+//        return new RandomRule();
+//    }
 
 
 }
