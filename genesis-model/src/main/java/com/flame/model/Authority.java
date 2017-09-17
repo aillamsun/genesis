@@ -1,13 +1,12 @@
-package com.scaffold.model;
+package com.flame.model;
 
-import com.scaffold.core.model.BaseModel;
+import com.flame.core.model.BaseModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 /**
  * Created by sungang on 2017/8/19.
@@ -16,16 +15,18 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Table(name = "authority")
+@Table(name = "auth")
 public class Authority extends BaseModel{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name", length = 50)
-    @NotNull
-    private String name;
+    @Column(name = "app_key", length = 50)
+    private String appKey;
 
+    @Column(name = "secrity_key", length = 50)
+    private String secrityKey;
 
+    private String token;
 }

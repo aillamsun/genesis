@@ -8,8 +8,7 @@ import com.flame.core.result.ErrorInfo;
  */
 public enum ErrorInfoEnum implements ErrorInfo {
 
-    PARAMS_NOT_NULL("000001", "params not null"),
-    USER_EXISTS("000002","user already exists");
+    AUTH_ERROR("000000","认证失败!");
 
     private String code;
 

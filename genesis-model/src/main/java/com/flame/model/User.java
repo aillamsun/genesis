@@ -1,13 +1,12 @@
-package com.scaffold.model;
+package com.flame.model;
 
-import com.scaffold.core.model.BaseModel;
+import com.flame.core.model.BaseModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 
@@ -43,7 +42,7 @@ public class User extends BaseModel {
     private List<Authority> authorities;
 
     @Column(name = "last_password_reset_date")
-    @NotNull
+//    @NotNull
     private Date lastPasswordResetDate;
 
 }

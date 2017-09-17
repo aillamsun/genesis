@@ -12,9 +12,9 @@ import javax.persistence.Table;
  * Created by sungang on 2017/9/16.
  */
 
-@Table(name = "t_user_money")
+@Table(name = "user_money")
 @NameStyle(Style.normal)
-public class TUserMoney extends BaseModel{
+public class UserMoney extends BaseModel{
 
     @Id
     private Long id;

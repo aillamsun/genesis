@@ -49,6 +49,8 @@
         <!-- Jar Tools -->
         <guava.version>19.0</guava.version>
         <joda.version>2.9.4</joda.version>
+        <jjwt.version>0.7.0</jjwt.version>
+        <lombok.version>1.16.8</lombok.version>
         <fastjson.version>1.2.17</fastjson.version>
         <springfox.version>2.5.0</springfox.version>
 
@@ -212,7 +214,11 @@
         </dependency>
 
 
-
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
 
     </dependencies>
 

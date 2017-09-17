@@ -1,9 +1,7 @@
 package com.flame.tx.user.money.service;
 
-import com.flame.mapper.UserMapper;
 import com.flame.mapper.UserMoneyMapper;
-import com.flame.model.TUser;
-import com.flame.model.TUserMoney;
+import com.flame.model.UserMoney;
 import com.flame.tx.user.money.client.UserClient;
 import com.lorne.tx.annotation.TxTransaction;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +22,12 @@ public class UserMoneyService {
     @Autowired
     private UserClient userClient;
 
-    public List<TUserMoney> findAll() {
+    public List<UserMoney> findAll() {
         return userMoneyMapper.selectAll();
     }
 
-    public TUserMoney findByUserId(Long userId){
-        TUserMoney userMoney = new TUserMoney();
+    public UserMoney findByUserId(Long userId){
+        UserMoney userMoney = new UserMoney();
         userMoney.setUserId(userId);
         return userMoneyMapper.selectOne(userMoney);
     }
@@ -37,7 +35,7 @@ public class UserMoneyService {
     @TxTransaction
     @Transactional
     public int save() {
-        TUserMoney userMoney = new TUserMoney();
+        UserMoney userMoney = new UserMoney();
         userMoney.setUserId(1L);
         userMoney.setMoney(100D);
         int rs1 = userMoneyMapper.insert(userMoney);

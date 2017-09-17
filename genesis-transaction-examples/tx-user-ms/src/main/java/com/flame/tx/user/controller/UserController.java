@@ -1,6 +1,6 @@
 package com.flame.tx.user.controller;
 
-import com.flame.model.TUser;
+import com.flame.model.User;
 import com.flame.tx.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,13 +18,13 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value = "/list",method = RequestMethod.GET)
-    public List<TUser> list() {
+    public List<User> list() {
         return userService.findAll();
     }
 
 
     @RequestMapping(value = "/list/{id}",method = RequestMethod.GET)
-    public TUser listById(@PathVariable("id") Long id) {
+    public User listById(@PathVariable("id") Long id) {
         return userService.findById(id);
     }
 

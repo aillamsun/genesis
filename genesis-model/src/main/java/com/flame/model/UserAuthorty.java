@@ -1,6 +1,6 @@
-package com.scaffold.model;
+package com.flame.model;
 
-import com.scaffold.core.model.BaseModel;
+import com.flame.core.model.BaseModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

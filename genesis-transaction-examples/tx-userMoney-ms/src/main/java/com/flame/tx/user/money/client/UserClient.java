@@ -1,6 +1,6 @@
 package com.flame.tx.user.money.client;
 
-import com.flame.model.TUserMoney;
+import com.flame.model.UserMoney;
 import com.lorne.tx.springcloud.feign.TransactionRestTemplateConfiguration;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +15,6 @@ import java.util.List;
 public interface UserClient {
 
     @RequestMapping(value = "/user/list",method = RequestMethod.GET)
-    List<TUserMoney> findAll();
+    List<UserMoney> findAll();
 
 }

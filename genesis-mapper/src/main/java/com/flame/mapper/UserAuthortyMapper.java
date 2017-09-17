@@ -1,7 +1,7 @@
-package com.scaffold.mapper.user;
+package com.flame.mapper;
 
-import com.scaffold.core.dao.mybatis.BaseMapper;
-import com.scaffold.model.UserAuthorty;
+import com.flame.core.dao.mybatis.BaseMapper;
+import com.flame.model.UserAuthorty;
 
 /**
  * Created by sungang on 2017/8/21.
