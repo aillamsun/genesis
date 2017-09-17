@@ -48,6 +48,9 @@ public class UserService {
          */
         int rs2 = userMoneyClient.save();
 
+        /**
+         * 抛出异常
+         */
         int v = 100 / 0;
         return rs1 + rs2;
     }
