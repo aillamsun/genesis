@@ -1,6 +1,9 @@
 package com.flame.provider.zuul.config;
 
-import com.flame.provider.zuul.filters.AccessFilter;
+import com.flame.provider.zuul.filters.JwtAuthenticationTokenFilter;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.cloud.netflix.zuul.filters.discovery.PatternServiceRouteMapper;
+import org.springframework.cloud.netflix.zuul.filters.discovery.ServiceRouteMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,15 +16,15 @@ import org.springframework.context.annotation.Configuration;
 public class Configurations {
 
 
-//    @Bean
-//    @ConditionalOnMissingBean(ServiceRouteMapper.class)
-//    public PatternServiceRouteMapper serviceRouteMapper() {
-//        return new PatternServiceRouteMapper("(?<serviceId>^.+)/(?<version>v.+$)", "${serviceId}/${version}");
-//    }
+    @Bean
+    @ConditionalOnMissingBean(ServiceRouteMapper.class)
+    public PatternServiceRouteMapper serviceRouteMapper() {
+        return new PatternServiceRouteMapper("(?<serviceId>^.+)/(?<version>v.+$)", "${serviceId}/${version}");
+    }
 
     @Bean
-    public AccessFilter accessFilter() {
-        return new AccessFilter();
+    public JwtAuthenticationTokenFilter accessFilter() {
+        return new JwtAuthenticationTokenFilter();
     }
 
 }

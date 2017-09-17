@@ -1,5 +1,7 @@
 package com.flame.provider.zuul;
 
+import com.flame.provider.zuul.utils.SpringUtils;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -12,6 +14,7 @@ import org.springframework.context.annotation.Bean;
  */
 @SpringBootApplication
 @EnableZuulProxy
+@MapperScan("com.flame.mapper")
 public class GenesisProviderByZuulApp {
 
     public static void main(String[] args) {
@@ -32,5 +35,10 @@ public class GenesisProviderByZuulApp {
     @Bean
     public PatternServiceRouteMapper serviceRouteMapper() {
         return new PatternServiceRouteMapper("(?<name>^.+)-(?<version>v.+$)", "${version}/${name}");
+    }
+
+    @Bean
+    public SpringUtils springUtilsBean() {
+        return new SpringUtils();
     }
 }
