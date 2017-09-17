@@ -1,52 +1,31 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>genesis</artifactId>
+        <artifactId>genesis-transaction-examples</artifactId>
         <groupId>com.flame</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>genesis-transaction-examples</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>tx-userMoney-ms</artifactId>
+    <packaging>jar</packaging>
 
-    <name>genesis-transaction-examples</name>
+    <name>tx-userMoney-ms</name>
     <url>http://maven.apache.org</url>
-    <modules>
-        <module>tx-user-ms</module>
-        <module>tx-userMoney-ms</module>
-         <module>tx-manager</module>
-    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
-
         <dependency>
-            <groupId>com.lorne.tx</groupId>
-            <artifactId>springcloud-transaction</artifactId>
-            <version>3.0.0.RELEASE</version>
+            <groupId>com.flame</groupId>
+            <artifactId>genesis-mapper</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-feign</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
 
     </dependencies>
-
 
 
     <build>
