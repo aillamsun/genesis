@@ -43,4 +43,14 @@ public class JWTController {
     }
 
 
+
+
+    @GetMapping("error")
+    public ResultBody error() {
+
+
+        return ResultGenerator.genSuccessResult();
+    }
+
+
 }

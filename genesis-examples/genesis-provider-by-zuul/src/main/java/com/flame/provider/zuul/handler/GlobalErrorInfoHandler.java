@@ -47,16 +47,6 @@ public class GlobalErrorInfoHandler {
         ResultBody result = new ResultBody(errorInfo);
         return result;
     }
-//
-//
-//    @ExceptionHandler(value = UsernameNotFoundException.class)
-//    public ResultBody errorHandlerOverJson(HttpServletRequest request, UsernameNotFoundException exception) {
-//        logger.error("用户不存在:", exception.getMessage());
-//        ResultBody result = new ResultBody(GlobalErrorInfoEnum.USER_NOT_FOUND);
-//        return result;
-//    }
-
-
 
     /**
      * GlobalErrorInfoException 系统异常

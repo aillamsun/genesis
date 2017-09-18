@@ -1,5 +1,6 @@
 package com.flame.provider.zuul.config;
 
+import com.flame.provider.zuul.filters.GlobalSendErrorFilter;
 import com.flame.provider.zuul.filters.JwtAuthenticationTokenFilter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.cloud.netflix.zuul.filters.discovery.PatternServiceRouteMapper;
@@ -26,5 +27,12 @@ public class Configurations {
     public JwtAuthenticationTokenFilter accessFilter() {
         return new JwtAuthenticationTokenFilter();
     }
+
+
+    @Bean
+    public GlobalSendErrorFilter errorFilter() {
+        return new GlobalSendErrorFilter();
+    }
+
 
 }
