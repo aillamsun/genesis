@@ -11,130 +11,30 @@
  Target Server Version : 50717
  File Encoding         : utf-8
 
- Date: 09/17/2017 11:09:10 AM
+ Date: 09/19/2017 11:56:30 AM
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
---  Table structure for `OAUTH_ACCESS_TOKEN`
+--  Table structure for `auth`
 -- ----------------------------
-DROP TABLE IF EXISTS `OAUTH_ACCESS_TOKEN`;
-CREATE TABLE `OAUTH_ACCESS_TOKEN` (
-  `TOKEN_ID` varchar(256) DEFAULT NULL,
-  `TOKEN` blob,
-  `AUTHENTICATION_ID` varchar(256) DEFAULT NULL,
-  `USER_NAME` varchar(256) DEFAULT NULL,
-  `CLIENT_ID` varchar(256) DEFAULT NULL,
-  `AUTHENTICATION` blob,
-  `REFRESH_TOKEN` varchar(256) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `auth`;
+CREATE TABLE `auth` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `app_key` varchar(32) NOT NULL COMMENT '授权应用key',
+  `secrity_key` varchar(32) NOT NULL COMMENT '安全密钥',
+  `token` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `s_index` (`app_key`,`secrity_key`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='Api 接口认证授权信息';
 
 -- ----------------------------
---  Table structure for `OAUTH_APPROVALS`
--- ----------------------------
-DROP TABLE IF EXISTS `OAUTH_APPROVALS`;
-CREATE TABLE `OAUTH_APPROVALS` (
-  `USERID` varchar(256) DEFAULT NULL,
-  `CLIENTID` varchar(256) DEFAULT NULL,
-  `SCOPE` varchar(256) DEFAULT NULL,
-  `STATUS` varchar(10) DEFAULT NULL,
-  `EXPIRESAT` timestamp NULL DEFAULT NULL,
-  `LASTMODIFIEDAT` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
---  Table structure for `OAUTH_CLIENT_DETAILS`
--- ----------------------------
-DROP TABLE IF EXISTS `OAUTH_CLIENT_DETAILS`;
-CREATE TABLE `OAUTH_CLIENT_DETAILS` (
-  `CLIENT_ID` varchar(255) NOT NULL,
-  `RESOURCE_IDS` varchar(256) DEFAULT NULL,
-  `CLIENT_SECRET` varchar(256) DEFAULT NULL,
-  `SCOPE` varchar(256) DEFAULT NULL,
-  `AUTHORIZED_GRANT_TYPES` varchar(256) DEFAULT NULL,
-  `WEB_SERVER_REDIRECT_URI` varchar(256) DEFAULT NULL,
-  `AUTHORITIES` varchar(256) DEFAULT NULL,
-  `ACCESS_TOKEN_VALIDITY` int(11) DEFAULT NULL,
-  `REFRESH_TOKEN_VALIDITY` int(11) DEFAULT NULL,
-  `ADDITIONAL_INFORMATION` varchar(4096) DEFAULT NULL,
-  `AUTOAPPROVE` varchar(45) DEFAULT 'true',
-  PRIMARY KEY (`CLIENT_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
---  Records of `OAUTH_CLIENT_DETAILS`
+--  Records of `auth`
 -- ----------------------------
 BEGIN;
-INSERT INTO `OAUTH_CLIENT_DETAILS` VALUES ('ui', null, 'secret', 'ui-scope', 'authorization_code,password,refresh_token,client_credentials', '', 'ROLE_CLIENT, ROLE_TRUSTED_CLIENT', '30000', '30000', null, 'false'), ('zuul', null, 'secret', 'server-scope', 'client_credentials', '', 'ROLE_CLIENT, ROLE_TRUSTED_CLIENT', '30000', '30000', null, 'false');
-COMMIT;
-
--- ----------------------------
---  Table structure for `OAUTH_CODE`
--- ----------------------------
-DROP TABLE IF EXISTS `OAUTH_CODE`;
-CREATE TABLE `OAUTH_CODE` (
-  `CODE` varchar(256) DEFAULT NULL,
-  `AUTHENTICATION` blob
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
---  Table structure for `OAUTH_REFRESH_TOKEN`
--- ----------------------------
-DROP TABLE IF EXISTS `OAUTH_REFRESH_TOKEN`;
-CREATE TABLE `OAUTH_REFRESH_TOKEN` (
-  `TOKEN_ID` varchar(256) DEFAULT NULL,
-  `TOKEN` blob,
-  `AUTHENTICATION` blob
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
---  Table structure for `USER`
--- ----------------------------
-DROP TABLE IF EXISTS `USER`;
-CREATE TABLE `USER` (
-  `ID` char(36) NOT NULL,
-  `LOGIN_NAME` varchar(45) NOT NULL,
-  `PASSWORD` varchar(100) NOT NULL,
-  `NICK_NAME` varchar(45) NOT NULL,
-  `EMAIL` varchar(45) NOT NULL,
-  `PHONE` varchar(45) DEFAULT NULL,
-  `STATUS` varchar(20) NOT NULL,
-  `GRADE` tinyint(2) DEFAULT '0',
-  `VERSION` bigint(20) DEFAULT NULL,
-  `CREATED_TIME` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `MODIFIED_TIME` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`ID`),
-  UNIQUE KEY `USER_ID_UINDEX` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
---  Records of `USER`
--- ----------------------------
-BEGIN;
-INSERT INTO `USER` VALUES ('806f0ac6-a3e4-42a1-8dfc-1a3e56002881', 'gavin', '$2a$10$lZtZ84C7opaUODCAdYzhwuNOuGqpSVjZLiM/gcZiAqEDDI/Vfq/Vu', 'gavin-guo', 'gavin.guo@msn.com', '13621670031', 'ENABLED', '1', '1', '2016-11-03 07:25:03', '2016-11-03 07:25:03');
-COMMIT;
-
--- ----------------------------
---  Table structure for `USER_AUTHORITY`
--- ----------------------------
-DROP TABLE IF EXISTS `USER_AUTHORITY`;
-CREATE TABLE `USER_AUTHORITY` (
-  `ID` char(36) NOT NULL,
-  `USER_ID` char(36) NOT NULL,
-  `AUTHORITY` varchar(20) NOT NULL,
-  PRIMARY KEY (`ID`),
-  UNIQUE KEY `USER_AUTHORITY_ID_UINDEX` (`ID`),
-  KEY `USER_AUTHORITY_USER_ID_FK` (`USER_ID`),
-  CONSTRAINT `USER_AUTHORITY_USER_ID_FK` FOREIGN KEY (`USER_ID`) REFERENCES `USER` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
---  Records of `USER_AUTHORITY`
--- ----------------------------
-BEGIN;
-INSERT INTO `USER_AUTHORITY` VALUES ('bca21a1c-2afe-4305-875d-ee5ec5ac395f', '806f0ac6-a3e4-42a1-8dfc-1a3e56002881', 'AUTHORITY_SUPER');
+INSERT INTO `auth` VALUES ('2', 'd3479612a5d54cef84bde277465f03e3', 'g6zpZ5RhnSLdR127', 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkMzQ3OTYxMmE1ZDU0Y2VmODRiZGUyNzc0NjVmMDNlMyIsImF1ZCI6IiIsImV4cCI6MTUwNjM0Njg5NCwiaWF0IjoxNTA1NzQyMDk0fQ.F4Ij3QAhk9fAUi4dlJ04KGzMZT_tS9EJwovempGp4lc8lthMfGi73LrH0f9NpUbFGZ1_2EyW0OieO2eO4dD2kw');
 COMMIT;
 
 -- ----------------------------
@@ -153,6 +53,13 @@ CREATE TABLE `lcn_tx_genesis_tx_user_money_ms` (
   `invocation` longblob NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ----------------------------
+--  Records of `lcn_tx_genesis_tx_user_money_ms`
+-- ----------------------------
+BEGIN;
+INSERT INTO `lcn_tx_genesis_tx_user_money_ms` VALUES ('BznHVjwg', '0', '2017-09-19 11:40:48', '2017-09-19 11:40:48', '0', '298M62nN', '2145f891bd276daa411b5218a512ebb4', 'tNRR0BKm', 0x0b920130636f6d2e666c616d652e74782e757365722e6d6f6e65792e736572766963652e557365724d6f6e6579536572766963650c1204736176651b7a106a6176612e6c616e672e4f626a656374180110010bfa0719636f6d2e666c616d652e6d6f64656c2e557365724d6f6e657910161900000000000059400c1c237a0f6a6176612e6c616e672e436c617373180110010b920119636f6d2e666c616d652e6d6f64656c2e557365724d6f6e65790c24);
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `lcn_tx_genesis_tx_user_ms`
@@ -214,40 +121,54 @@ INSERT INTO `t_order` VALUES ('1', '1', '耐克', '100.00', '1', '2017-03-27 00:
 COMMIT;
 
 -- ----------------------------
---  Table structure for `t_user`
+--  Table structure for `user`
 -- ----------------------------
-DROP TABLE IF EXISTS `t_user`;
-CREATE TABLE `t_user` (
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) DEFAULT NULL,
-  `pwd` varchar(255) DEFAULT NULL,
-  `age` int(11) DEFAULT NULL,
+  `user_name` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `remark` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `enabled` tinyint(11) DEFAULT NULL,
+  `last_password_reset_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
---  Records of `t_user`
+--  Records of `user`
 -- ----------------------------
 BEGIN;
-INSERT INTO `t_user` VALUES ('7', 'Test Tx', '1', '20');
+INSERT INTO `user` VALUES ('1', 'admin', '$2a$08$lDnHPz7eUkSi6ao14Twuau08mzhWrL4kyZGGU5xfiGALO/Vxd5DOi', null, '', '1', '2017-08-21 16:44:12'), ('8', 'user', '$2a$10$HjoWoNdG23N1XjHh720idePurSbrUA.pAcDfGGyDbI5KgsGgvuvPi', null, '', '1', '2017-08-21 17:26:34'), ('9', 'disabled', '$2a$10$ZgTe2Owsh9NPWJOnADJkeOPWT7dyX/7M64QhW6zqXdSNEGtv3W/Rm', null, '', '0', '2017-08-21 17:29:31');
 COMMIT;
 
 -- ----------------------------
---  Table structure for `t_user_money`
+--  Table structure for `user_authority`
 -- ----------------------------
-DROP TABLE IF EXISTS `t_user_money`;
-CREATE TABLE `t_user_money` (
+DROP TABLE IF EXISTS `user_authority`;
+CREATE TABLE `user_authority` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) DEFAULT NULL,
+  `authority_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `user_authority`
+-- ----------------------------
+BEGIN;
+INSERT INTO `user_authority` VALUES ('1', '1', '1'), ('2', '1', '2'), ('13', '8', '1'), ('14', '9', '1');
+COMMIT;
+
+-- ----------------------------
+--  Table structure for `user_money`
+-- ----------------------------
+DROP TABLE IF EXISTS `user_money`;
+CREATE TABLE `user_money` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `user_id` bigint(20) NOT NULL,
   `money` double DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
-
--- ----------------------------
---  Records of `t_user_money`
--- ----------------------------
-BEGIN;
-INSERT INTO `t_user_money` VALUES ('3', '1', '100');
-COMMIT;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 SET FOREIGN_KEY_CHECKS = 1;
