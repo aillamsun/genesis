@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by sungang on 2017/9/16.
@@ -30,7 +31,7 @@ public class UserMoneyController {
 
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public int save() {
-        return userService.save();
+    public int save(@RequestBody UserMoney userMoney) {
+        return userService.save(userMoney);
     }
 }

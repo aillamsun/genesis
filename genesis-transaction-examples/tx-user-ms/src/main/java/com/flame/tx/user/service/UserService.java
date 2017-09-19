@@ -2,13 +2,16 @@ package com.flame.tx.user.service;
 
 import com.flame.mapper.UserMapper;
 import com.flame.model.User;
+import com.flame.model.UserMoney;
 import com.flame.tx.user.client.UserMoneyClient;
+import com.google.common.collect.Maps;
 import com.lorne.tx.annotation.TxTransaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by sungang on 2017/9/16.
@@ -44,7 +47,12 @@ public class UserService {
         /**
          * 保存 余额 分布式服务
          */
-        int rs2 = userMoneyClient.save();
+        Map<String,Object> params = Maps.newHashMap();
+        params.put("userId",user.getId());
+        UserMoney userMoney = new UserMoney();
+        userMoney.setMoney(100D);
+        userMoney.setUserId(user.getId());
+        int rs2 = userMoneyClient.save(userMoney);
 
         /**
          * 抛出异常

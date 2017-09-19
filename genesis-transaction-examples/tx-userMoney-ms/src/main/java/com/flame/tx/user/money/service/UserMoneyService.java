@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by sungang on 2017/9/16.
@@ -34,10 +35,10 @@ public class UserMoneyService {
 
     @TxTransaction
     @Transactional
-    public int save() {
-        UserMoney userMoney = new UserMoney();
-        userMoney.setUserId(1L);
-        userMoney.setMoney(100D);
+    public int save(UserMoney userMoney) {
+//        UserMoney userMoney = new UserMoney();
+//        userMoney.setUserId(userId);
+//        userMoney.setMoney(100D);
         int rs1 = userMoneyMapper.insert(userMoney);
         return rs1;
     }
