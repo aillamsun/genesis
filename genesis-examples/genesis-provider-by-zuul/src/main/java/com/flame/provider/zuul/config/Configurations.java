@@ -23,16 +23,16 @@ public class Configurations {
         return new PatternServiceRouteMapper("(?<serviceId>^.+)/(?<version>v.+$)", "${serviceId}/${version}");
     }
 
-    @Bean
-    public JwtAuthenticationTokenFilter accessFilter() {
-        return new JwtAuthenticationTokenFilter();
-    }
-
-
-    @Bean
-    public GlobalSendErrorFilter errorFilter() {
-        return new GlobalSendErrorFilter();
-    }
+//    @Bean
+//    public JwtAuthenticationTokenFilter accessFilter() {
+//        return new JwtAuthenticationTokenFilter();
+//    }
+//
+//
+//    @Bean
+//    public GlobalSendErrorFilter errorFilter() {
+//        return new GlobalSendErrorFilter();
+//    }
 
 
 }
