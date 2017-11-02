@@ -17,6 +17,7 @@ import org.springframework.context.annotation.ComponentScan;
 @MapperScan("com.flame.mapper")
 //使用@EnableCircuitBreaker注解开启断路器功能
 @EnableCircuitBreaker
+//@EnableOAuth2Client
 public class GenesisGoodsProviderApp extends SpringBootServletInitializer{
 
 

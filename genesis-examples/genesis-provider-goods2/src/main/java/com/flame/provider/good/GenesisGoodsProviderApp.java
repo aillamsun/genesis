@@ -16,6 +16,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @MapperScan("com.flame.mapper")
 //使用@EnableCircuitBreaker注解开启断路器功能
 @EnableCircuitBreaker
+
 public class GenesisGoodsProviderApp extends SpringBootServletInitializer{
 
     @Override
