@@ -14,7 +14,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @EnableDiscoveryClient
 @EnableAuthorizationServer
 @EnableFeignClients
-@MapperScan("com.flame.oauth.mapper")
+@MapperScan("com.flame.mapper")
 public class OAuth2ServerApplication {
 
     public static void main(String[] args) {
